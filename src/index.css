@@ -1,1 +1,378 @@
 @import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-slate-900 font-mono
+    text-base
+    text-white
+    leading-normal
+    tracking-normal
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply mx-0 block font-bold
+  }
+  h1 {
+    @apply my-1 text-3xl
+  }
+  h2 {
+    @apply my-2 text-2xl
+  }
+  h3 {
+    @apply my-3 text-xl
+  }
+  h4 {
+    @apply my-4 text-base
+  }
+  h5 {
+    @apply my-5 text-sm
+  }
+  h6 {
+    @apply my-6 text-xs
+  }
+
+  p {
+    @apply block my-1 p-1
+  }
+  a {
+   @apply
+   m-1 py-1 px-3
+   underline
+   decoration-dotted
+   underline-offset-6
+   rounded-md
+   hover:bg-blue-400
+    hover:font-bold
+   cursor-pointer
+  }
+  button {
+    @apply
+    m-1 py-1 px-3
+    rounded-md
+    text-base
+    text-center
+    cursor-pointer
+    hover:shadow-md 
+    hover:shadow-slate-700
+    hover:font-bold
+  }
+  form {
+    @apply
+    block
+    w-full
+    my-2 p-5
+  }
+  input {
+    @apply
+    block
+    bg-white
+    m-1
+    text-black
+    focus:outline-2
+    focus:outline-offset-2
+    focus:outline-orange-500
+  }
+  label {
+    @apply
+    text-sm
+    my-1
+  }
+
+  textarea {
+    @apply
+    block
+    h-30
+    my-1 p-1
+    bg-white
+    text-black
+  }
+
+}
+
+@layer components {
+
+  /* LOGIN PAGE */
+  .login-logo {
+    @apply
+    flex 
+    justify-center 
+    items-center
+    h-[100px]
+    border
+    rounded-xl
+    my-2
+    md:h-full
+    cursor-pointer
+  }
+  .login-container {
+    @apply
+    w-full
+    my-2 py-5 px-5
+    rounded-xl
+    md:py-15
+    md:h-full
+    bg-slate-950
+  }
+
+  /* END LOGIN PAGE */
+
+  /* LANDING PAGE */
+  .navbar {
+    @apply
+    flex 
+    justify-between 
+    items-center 
+    w-full
+    h-20
+    fixed
+    z-10
+  }
+  .navbar-logo {
+    @apply
+    px-3 py-1
+    rounded-md
+    text-xl
+    md:text-2xl
+    md:px-5
+    md:py-2
+    md:rounded-lg
+  }
+  .navbar-link {
+    @apply
+    px-3 py-1
+    no-underline
+    rounded-md
+    text-xs
+    md:text-base
+    md:px-5
+    md:py-2
+    md:rounded-lg
+  }
+  .navbar-link, .navbar-logo {
+    @apply
+    hover:bg-orange-500
+    hover:shadow-md 
+    hover:shadow-slate-700
+    hover:font-bold
+  }
+  .core {
+    @apply 
+    grow
+    space-y-8
+  }  
+  .bg-home {
+    @apply
+    bg-[url(/src/assets/home-bg.png)]
+    bg-fixed
+    bg-no-repeat
+    bg-cover
+    min-h-screen
+    blur-[3px]
+    bg-center
+    md:bg-top
+  }
+  .intro {
+    @apply
+    absolute
+    text-center
+    font-serif
+    text-xl
+    leading-relaxed
+    md:text-2xl
+    lg:text-4xl
+  }
+  /* END LANDING PAGE */
+
+  /* DASHBOARD */
+  .dash-nav {
+    @apply
+    flex 
+    justify-between 
+    items-center 
+    w-full
+    h-20
+    fixed
+    bg-slate-950
+  }
+  .sidebar {
+    @apply
+    h-full
+    m-0
+    bg-slate-950
+    fixed
+  }
+  .dash-logo {
+    @apply
+    text-center
+    rounded-md
+    m-5 px-4 py-2
+  }
+  .dash-link {
+    @apply
+    rounded-md
+    mx-5 my-1 px-4 py-2
+    font-normal
+    no-underline
+  }
+  .dash-logo, .dash-link {
+    @apply
+    hover:bg-orange-400
+    hover:text-white
+    hover:font-bold
+  }
+  .active {
+    @apply     
+    bg-orange-400
+    font-bold
+  }
+
+/* END DASHBOARD */
+/* FORMS */
+  .input-form {
+    @apply
+    w-full
+    my-2 p-2
+    rounded-md
+    bg-white  
+    text-black
+  }
+  .form-radio {
+    @apply 
+    inline-flex 
+    items-center
+  }
+  .form-radio-label {
+    @apply 
+    ml-2 
+    text-slate-600 
+    cursor-pointer 
+    text-sm
+  }
+  .form-radio-input {
+    @apply
+    appearance-none
+    w-5 h-5
+    cursor-pointer 
+    rounded-full 
+    border-2
+    md:border-4 
+    border-slate-500 
+    checked:border-white
+    checked:bg-orange-500 
+  }
+  .input-group-left {
+    @apply
+    inline-flex
+    gap-0
+    w-full
+  }
+  .input-group-left .input-group-text {
+    @apply
+    my-2 p-2 mx-0
+    rounded-md
+    rounded-r-none
+    bg-slate-300  
+    text-black
+  }
+  .input-group-left .input-form {
+    @apply 
+    mx-0
+    rounded-l-none
+  }
+  .modal {
+    @apply fixed inset-0 flex justify-center items-center z-50
+  }
+  .modal-backdrop {
+    @apply fixed inset-0 bg-white opacity-30
+  }
+  .modal-container {
+    @apply w-full h-auto mx-20 p-5 bg-slate-900 rounded-xl outline-2 outline-offset-4 outline-orange-500 z-20 md:w-[500px] md:mx-auto md:p-10
+  }
+  .modal-header {
+    @apply flex justify-between items-center
+  }
+  .modal-close {
+    @apply py-1 px-3 rounded-full bg-red-500 font-bold cursor-pointer text-white
+  }
+
+  .modal-open {
+    @apply py-1 px-3 rounded-full bg-slate-800 font-bold float-right cursor-pointer
+  }
+  .input-modal {
+    @apply
+    w-full
+    my-2 mx-0 p-2 
+    rounded-md
+    bg-white  
+    text-black
+    focus:outline-2
+    focus:outline-orange-500
+    focus:outline-offset-2
+  }
+/* END FORMS */
+
+  .error {
+    @apply
+    outline-red-500
+    outline-offset-4
+  }
+  .message {
+    @apply
+    block
+    mb-5 p-2
+    rounded-md
+    outline
+    bg-white
+    text-black
+    text-center
+    text-xs
+    md:text-sm
+  }
+  .btn-primary {
+    @apply
+    no-underline
+    bg-orange-400
+    hover:bg-white
+    hover:text-orange-600
+    hover:font-bold
+  }
+  .btn-info {
+    @apply
+    bg-white
+    text-black
+    no-underline
+    hover:bg-slate-800
+    hover:text-white
+  }
+
+  .btn-outline-info {
+    @apply no-underline bg-transparent outline-2 outline-slate-500 hover:bg-white hover:text-black hover:outline-0
+  }
+
+  /* FOOTER */
+  .footer {
+    @apply
+    max-w-full
+    h-30
+    bg-slate-950
+    text-xs
+    p-5
+  }
+
+  .footer-content {
+    @apply
+    md:grid
+    md:grid-cols-2
+    md:gap-5
+    min-h-full
+    md:mx-10 
+    md:p-5
+  }
+  /* END FOOTER */
+
+  @layer utilities {
+    .highlight {
+      @apply
+      text-orange-400
+    }
+  }
+}
