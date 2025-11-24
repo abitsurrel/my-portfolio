@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/forms";
 
 @layer base {
   body {
@@ -29,7 +30,6 @@
   h6 {
     @apply my-6 text-xs
   }
-
   p {
     @apply block my-1 p-1
   }
@@ -51,39 +51,8 @@
     text-base
     text-center
     cursor-pointer
-    hover:shadow-md 
-    hover:shadow-slate-700
-    hover:font-bold
-  }
-  form {
-    @apply
-    block
-    w-full
-    my-2 p-5
-  }
-  input {
-    @apply
-    block
-    bg-white
-    m-1
-    text-black
-    focus:outline-2
-    focus:outline-offset-2
-    focus:outline-orange-500
-  }
-  label {
-    @apply
-    text-sm
-    my-1
-  }
-
-  textarea {
-    @apply
-    block
-    h-30
-    my-1 p-1
-    bg-white
-    text-black
+    hover:font-bold 
+    hover:outline-2 hover:outline-offset-3 hover:outline-white hover:shadow-md  hover:shadow-slate-700
   }
 
 }
@@ -195,6 +164,8 @@
   }
   .sidebar {
     @apply
+    md:w-[230px]
+    lg:w-[250px]
     h-full
     m-0
     bg-slate-950
@@ -233,7 +204,10 @@
     my-2 p-2
     rounded-md
     bg-white  
-    text-black
+    text-slate-800
+    focus:outline-2
+    focus:outline-offset-4
+    focus:outline-white
   }
   .form-radio {
     @apply 
@@ -271,7 +245,7 @@
     rounded-md
     rounded-r-none
     bg-slate-300  
-    text-black
+    text-slate-800
   }
   .input-group-left .input-form {
     @apply 
@@ -291,11 +265,11 @@
     @apply flex justify-between items-center
   }
   .modal-close {
-    @apply py-1 px-3 rounded-full bg-red-500 font-bold cursor-pointer text-white
+    @apply py-1 px-3 rounded-full bg-red-700 cursor-pointer text-white hover:bg-white hover:outline-2 hover:outline-offset-3 hover:outline-red-700 hover:text-red-700 hover:font-bold
   }
 
-  .modal-open {
-    @apply py-1 px-3 rounded-full bg-slate-800 font-bold float-right cursor-pointer
+  .add-item {
+    @apply py-1 px-3 border border-transparent rounded-full bg-slate-500 cursor-pointer hover:bg-white hover:outline-2 hover:outline-offset-3 hover:outline-slate-500 hover:text-slate-500 hover:font-bold
   }
   .input-modal {
     @apply
@@ -303,7 +277,7 @@
     my-2 mx-0 p-2 
     rounded-md
     bg-white  
-    text-black
+    text-slate-800
     focus:outline-2
     focus:outline-orange-500
     focus:outline-offset-2
@@ -322,7 +296,7 @@
     rounded-md
     outline
     bg-white
-    text-black
+    text-slate-800
     text-center
     text-xs
     md:text-sm
@@ -333,19 +307,17 @@
     bg-orange-400
     hover:bg-white
     hover:text-orange-600
-    hover:font-bold
+    hover:outline-orange-500
   }
   .btn-info {
-    @apply
-    bg-white
-    text-black
-    no-underline
-    hover:bg-slate-800
-    hover:text-white
+    @apply py-1 px-3 no-underline bg-slate-500 text-white  hover:bg-white hover:text-slate-800 hover:outline-slate-500
+  }
+  .btn-outline-info {
+    @apply py-1 px-3 no-underline bg-transparent outline-2 outline-slate-500 hover:bg-white hover:text-slate-800 hover:outline-slate-500 hover:outline-offset-3
   }
 
-  .btn-outline-info {
-    @apply no-underline bg-transparent outline-2 outline-slate-500 hover:bg-white hover:text-black hover:outline-0
+  .btn-danger {
+    @apply py-1 px-3 no-underline bg-red-700 hover:bg-white hover:text-red-700 hover:outline-red-700 hover:outline-offset-3
   }
 
   /* FOOTER */

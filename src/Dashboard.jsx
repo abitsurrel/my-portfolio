@@ -28,7 +28,7 @@ function Dashboard() {
                         <NavLink className="dash-link" to={"/dashboard/my-works"}>My Works</NavLink>
                     </nav>
                 </div>
-                <div className="flex flex-col gap-2 min-h-screen mt-24 mx-5 mb-5 md:mt-0 md:mb-0 md:mx-0 md:col-start-4 md:col-span-7 lg:col-start-3 lg:col-span-7 lg:mr-10 md:py-4 md:mr-5">
+                <div className="flex flex-col gap-2 min-h-screen mt-24 mx-5 mb-5 md:mt-0 md:mb-0 md:mx-0 md:col-start-4 md:col-span-7 lg:col-start-3 lg:col-span-7 md:py-4 md:mr-5">
                     <div className="core bg-slate-950 rounded-xl p-10">    
                         <Outlet />
                     </div>

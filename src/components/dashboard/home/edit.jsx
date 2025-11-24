@@ -1,11 +1,10 @@
 import { useContext, useState } from "react";
-import HomeIndex from './index';
-import { HomeContentContext } from "../../../HomeContentContext";
 import { NavLink, useNavigate } from "react-router-dom";
+import { DataContext } from "../../../DataContext";
 
 function EditHomeContent() {
 
-    const { sharedHomeContentData, setSharedHomeContentData } = useContext(HomeContentContext);
+    const { sharedHomeContentData, setSharedHomeContentData } = useContext(DataContext);
     const navigate = useNavigate();
 
     const [toggleModal, setToggleModal] = useState(false);
@@ -69,14 +68,27 @@ function EditHomeContent() {
                     </div>
                 </div>
                 <div className="flex flex-col gap-0 mt-3">
-                    <div>
-                        <span className="modal-open" id="OpenAddToolsModal" onClick={handleToggleModal}>+</span>
+                    <div className="flex justify-end">
+                        <span className="add-item" id="OpenAddToolsModal" onClick={handleToggleModal}>+</span>
                     </div>
-                    <div>                      
-                        <label htmlFor="used_tools">Name</label>
-                        <input type="text" className="input-modal border-slate-950" name="used_tools" id="used_tools" />                                
-                        <label htmlFor="description">Description</label>
-                        <textarea className="input-modal" name="description" id="description"></textarea>
+                    <div> 
+                        {sharedHomeContentData.tools.map((usedTool) => (
+                            <div key={usedTool.id} className="w-full h-auto mt-4">    
+                                <div className="relative block h-full w-full transition duration-300 ease-out hover:scale-95 cursor-pointer"> 
+                                    <div className="absolute w-full h-full m-0 p-0 transition duration-300 ease-in-out opacity-0 translate-y-2 rounded-md hover:opacity-100">
+                                        <div className="flex justify-center items-center m-0 p-0 h-full">
+                                            <button className="btn-primary w-1/2">Edit</button>
+                                        </div>            
+                                    </div>
+                                    <div className="grid grid-cols-4 p-4 border rounded-md">
+                                        <span className="col-span-1 font-bold italic">{usedTool.tool}</span>
+                                        <div className="col-span-3 m-0 p-0 italic">
+                                            {usedTool.description} 
+                                        </div>
+                                    </div>
+                                </div>     
+                            </div>
+                        ))}
                     </div>
                 </div>
                 <div className="grid grid-cols-4 mt-5 gap-3">

@@ -1,18 +1,31 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { HomeContentContext } from "../../../HomeContentContext";
 import { NavLink } from "react-router-dom";
+import SelectTools from './selectTools';
+import { DataContext } from "../../../DataContext";
 
 function AddHomeContent() {
 
-    const { setSharedHomeContentData } = useContext(HomeContentContext);
+    const { setSharedHomeContentData } = useContext(DataContext);
     const navigate = useNavigate();
 
     const [toggleModal, setToggleModal] = useState(false);
+    
+    const [hideMessage, setHideMessage] = useState(true);
+    const [errorMessage, setErrorMessage] = useState("");
+
     const handleToggleModal = () => {
         
-        if(toggleModal === false)
+        if(!hideMessage) {
+            setHideMessage(true);
+        }
+
+        if(toggleModal === false){
+
+            // SET ONCLICK TO handleAddTool
+            setCurrentOnclickHandler("handleAddTool");
             setToggleModal(true);
+        }
         else
             setToggleModal(false);
     }
@@ -27,42 +40,195 @@ function AddHomeContent() {
 
     };
 
-    const [toolsMasteryInput, setToolsMasteryInput] = useState(0);
+    const initialToolSelected = "";
+    const [toolSelectedInput, setToolSelectedInput] = useState(initialToolSelected);
 
-    const handleToolsMasteryInput = (event) => {
+    const handleToolSelectedInput = (event) => {
 
-        setToolsMasteryInput(event.target.value);
+        setToolSelectedInput(event.target.value);
     }
 
-    const handleInputHomeContentData = () => {
-        setSharedHomeContentData({
-            aboutPortfolioData:aboutPortFolioInput
-        });
-        navigate("/dashboard/home", {replace: true});
+    const initialDescription = "";
+    const [toolsDescriptionInput, setToolsDescriptionInput] = useState(initialDescription);    
+
+    const handleToolsDescriptionInput = (event) => {
+
+        setToolsDescriptionInput(event.target.value);
+    }
+
+    // INITIAL ADDED TOOLS LIST
+    const initialAddedTools = [{id:0, tool:"", description:""}];
+    // STATE TO ADD TOOL AND DESCRIPTION IN THE ADDED TOOLS LIST
+    const [addedToolsList, setAddedToolsList] = useState(initialAddedTools);
+
+    // CURRENT TOOL WHICH IS INITIALIZED EQUAL TO initialAddedTools.id
+    const [currentTool, setCurrentTool] = useState(0);
+
+    // MODAL ONCLICK FOOTER
+    const [currentOnclickHandler, setCurrentOnclickHandler] = useState("");
+
+    const handleAddTool = () => {
+
+        // CREATE A COPY OF ADDED TOOL LIST ARRAY
+        const newToolData = addedToolsList.filter(Boolean);
+
+        // CHECK IF TOOL AND DESCRIPTION ARE EMPTY
+        if(toolSelectedInput !== "" && toolsDescriptionInput !== "") {
+
+            // MUTATE DATA addedToolsList USING THE newToolData
+            //  BY ACCESSING THE ELEMENT OF CURRENT POSITION
+            newToolData[currentTool] = {
+                id:currentTool, 
+                tool:toolSelectedInput,
+                // CAPITALIZE FIRST LETTER
+                // ^. MATCHES THE FIRST CHAR OF THE STRING
+                description:toolsDescriptionInput.replace(/^./, (char) => char.toUpperCase())
+            };
+
+            // SET THE NEW VALUES
+            setAddedToolsList(newToolData);
+            // UPDATE currentTool
+            setCurrentTool(currentTool + 1);
+
+            // CLOSE MODAL
+            setToggleModal(false);
+
+            // SET USER INPUT TO ITS INITIAL STATE;
+            reset();
+        }
+
+        else {
+
+            // SET USER INPUT TO ITS INITIAL STATE;
+            reset();
+
+            setErrorMessage("Tool and Description are required! Please try again.");
+            setHideMessage(false);
+            // CLOSE MODAL
+            setToggleModal(false);
+        }
+    }
+
+    const handleEditTool = () => {
+
+        // CREATE A COPY OF ADDED TOOL LIST ARRAY
+        const newToolData = [...addedToolsList];
+
+        // CHECK IF TOOL AND DESCRIPTION ARE EMPTY
+        if(toolSelectedInput !== "" && toolsDescriptionInput !== "") {
+            
+            // MUTATE DATA addedToolsList USING THE newToolData
+            //  BY ACCESSING THE ELEMENT OF CURRENT POSITION
+            newToolData[currentTool] = {
+                id:currentTool, 
+                tool:toolSelectedInput,
+                // CAPITALIZE FIRST LETTER
+                // ^. MATCHES THE FIRST CHAR OF THE STRING
+                description:toolsDescriptionInput.replace(/^./, (char) => char.toUpperCase())
+            };
+
+            // SET THE NEW VALUES
+            setAddedToolsList(newToolData);
+
+            // GET THE LAST ELEMENT'S ID
+            const getLastID = newToolData[newToolData.length - 1].id;
+            // UPDATE currentTool
+            setCurrentTool(getLastID + 1);
+
+            // CLOSE MODAL
+            setToggleModal(false);
+
+            // SET USER INPUT TO ITS INITIAL STATE;
+            reset();
+        }
+        else {
+
+            // SET USER INPUT TO ITS INITIAL STATE;
+            reset();
+
+            setErrorMessage("Tool and Description are required! Please try again.");
+            setHideMessage(false);
+
+            // CLOSE MODAL
+            setToggleModal(false);
+        }
+        
     };
 
-    return (
-        <div>            
-            <h1 className="text-center mb-5">Add Home Content</h1>
-            <div className="w-full mx-auto md:w-2/3"> 
+    const handleDeleteTool = (idToDelete) => {
+
+        // USE filter() TO CREATE AN UPDATED COPY OF ADDED TOOLS ARRAY
+        // WITHOUT THE SELECTED TOOL
+        const updatedToolList = addedToolsList.filter(tool => tool.id !== idToDelete);
+
+        // SET UPDATED ARRAY TO ADDED TOOLS LIST
+        setAddedToolsList(updatedToolList);
+
+        const newCurrentTool = updatedToolList.length - 1;
+        setCurrentTool(newCurrentTool + 1);
+
+    } 
+    
+    const getEditToolValues = (id) => {
+         
+        // GET SELECTED TOOL
+        const getSelectedTool = addedToolsList[id].tool;
+
+        // GET SELECTED TOOL'S DESCRIPTION
+        const getSelectedToolDescription = addedToolsList[id].description;
+
+        // SET CURRENT TOOL TO ID
+        setCurrentTool(id);
+
+        // UPDATE VALUE OF toolSelectedInput
+        setToolSelectedInput(getSelectedTool);
+        setToolsDescriptionInput(getSelectedToolDescription);
+
+        // SET ONCLICK TO handleEditTool
+        setCurrentOnclickHandler("handleEditTool");
+
+        // OPEN MODAL
+        setToggleModal(true);
+    };
+
+    const handleInputHomeContentData = () => {
+        if(aboutPortFolioInput !== "" && toolSelectedInput !== "" && toolsDescriptionInput !== "") {
+            setSharedHomeContentData({
+                aboutPortfolioData:aboutPortFolioInput,
+                tools:addedToolsList
+            });
+            navigate("/dashboard/home", {replace: true});
+        }
+        else {
+            setErrorMessage("About Portfolio and Tools are required! Please try again.");
+            setHideMessage(false);
+        }
+    };
+
+    function reset() {
+        setToolSelectedInput(initialToolSelected);
+        setToolsDescriptionInput(initialDescription);
+    }
+
+    return (       
+            <div className="w-full mx-auto md:w-2/3">    
+                <div className={"message" + (errorMessage !== "" ? " error" : "")} hidden={hideMessage}>
+                    {errorMessage}
+                </div>
+                <h1 className="text-center mb-5 font-serif">Add Home Content</h1>
                 <div className="border border-dashed w-full my-4 p-4 leading-none rounded-md">           
                     <span className="text-xs text-gray-500">Note:</span>
                     <br />  
-                    <span className="text-xs text-gray-500">
-                        When you add a new About My Portfolio description, the new description will override the previous one.
-                    </span> 
-                    <br />  
-                    <br />         
-                    <span className="text-xs text-gray-500">Try this! (Copy and Paste):</span>
-                    <br />
-                    <span className="text-xs text-gray-500">
-                        My Portfolio showcases the different projects made by the developer using different web development tools.
-                    </span>
+                    <div className="ml-5 text-xs text-gray-500">
+                        When you submit a new Home Content data, the new data will override the previous one.
+                    </div> 
                 </div>  
                 <label htmlFor="about_portfolio">About My Portfolio</label>
-                <textarea className="input-form mb-5" name="about_portfolio" id="about_portfolio" onChange={handleAboutPortfolioInput} defaultValue="" placeholder="Add information..." />               
+                <textarea className="input-form mb-5" name="about_portfolio" id="about_portfolio" onChange={handleAboutPortfolioInput} rows={5} defaultValue="" placeholder="Add information..." /> 
+
                 {/* 
-                    fixed inset-0: Positions the modal container to cover the entire viewport.flex items-center justify-center: Centers the modal content horizontally and vertically.
+                    fixed inset-0: Positions the modal container to cover the entire viewport.
+                    flex items-center justify-center: Centers the modal content horizontally and vertically.
                     z-50: Ensures the modal appears on top of other content.
                 */}
                 {/* MODAL */}
@@ -74,70 +240,57 @@ function AddHomeContent() {
                         {/* HEADER */}
                         <div className="modal-header">
                             {/* TITLE */}
-                            <h3>Add Tools/Packages/Libraries</h3>
+                            <h3>Add Tools</h3>
                             <span className="modal-close" onClick={handleToggleModal}>x</span>                        
                         </div>
                         {/* BODY */}
                         <div className="mt-5">
-                            <label htmlFor="used_tools">Name</label>
-                            <input type="text" className="input-modal" name="used_tools" id="used_tools" />                                
-                            <label htmlFor="description">Description</label>
-                            <textarea className="input-modal" name="description" id="description"></textarea>
-                        </div>
-                        {/* FOOTER */}
-                        <div className="flex justify-end">
-                            <button className="btn-primary px-8 py-2">Add</button>
+                            <SelectTools 
+                                toolSelectedInput={toolSelectedInput} 
+                                toolsDescriptionInput={toolsDescriptionInput} 
+                                handleToolSelectedInput={handleToolSelectedInput} 
+                                handleToolsDescriptionInput={handleToolsDescriptionInput} 
+                                onClickHandler={currentOnclickHandler === "handleAddTool" ? handleAddTool : handleEditTool}
+                            />
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col gap-2 mt-3">
+                {/* END MODAL */}
+                <div className="grid grid-cols-2 gap-1">
                     <div>
-                        <span className="modal-open" id="OpenAddToolsModal" onClick={handleToggleModal}>+</span>
+                        <h2>Tools</h2>
                     </div>
-                    <div className="w-full leading-none">                                                
-                        <span className="text-xs text-gray-500">
-                            Note:
-                        </span>
-                        <br />                                      
-                        <span className="text-xs text-gray-500">
-                            0 - No Prior Knowledge <br />
-                            5 - Average Mastery <br />
-                            10 - Mastered
-                        </span>
-                    </div>   
-                    <div>                      
-                        {/* <label htmlFor="used_tools">Name</label>
-                        <input type="text" className="input-modal border-slate-950" name="used_tools" id="used_tools" />                                 */}
-                        <label htmlFor="tools">Tool</label>
-                        <select className="input-form max-h-10 overflow-y-2" name="tools" id="tools">
-                            <option value="" selected>Select Tools</option>
-                            <option value="C++">C++</option>
-                            <option value="Java">Java</option>
-                            <option value="PHP">PHP</option>
-                            <option value="React JS">React JS</option>
-                            <option value="Tailwind CSS">Tailwind CSS</option>
-                            <option value="Bootstrap CSS">Bootstrap CSS</option>
-                            <option value="Javascript">Javascript</option>
-                            <option value="C++">C++</option>
-                            <option value="Java">Java</option>
-                            <option value="PHP">PHP</option>
-                            <option value="React JS">React JS</option>
-                            <option value="Tailwind CSS">Tailwind CSS</option>
-                            <option value="Bootstrap CSS">Bootstrap CSS</option>
-                            <option value="Javascript">Javascript</option>
-                        </select>                      
-                        <label htmlFor="description">
-                        Mastery: <span className="font-bold text-lg text-orange-300">{toolsMasteryInput}</span>
-                        <input type="range" className="appearance-none w-full h-5 mx-0 bg-white rounded-md cursor-pointer" name="mastery" id="mastery" min="0" max="10" defaultValue="0" onChange={handleToolsMasteryInput} />
-                        </label>
-                    </div>
+                    <div className="flex justify-end py-2">
+                        <span className="add-item" id="OpenAddToolsModal" onClick={handleToggleModal}>+</span>
+                    </div> 
                 </div>
-                <div className="grid grid-cols-4 mt-5 gap-3">
-                    <button className="col-start-1 col-span-2 mx-0 btn-primary text-center" onClick={handleInputHomeContentData}>Submit</button>
+                {addedToolsList.map((addedTool, index) => (
+                    <div key={index} className="mt-4">
+                        {addedTool.tool === "" ? "" :
+                            <div className="flex flex-col border rounded-md">
+                                <div className="relative block w-full h-full transition duration-300 ease-out hover:scale-95 cursor-pointer"> 
+                                    <div className="absolute flex w-full h-full transition duration-300 ease-in-out opacity-0 rounded-md hover:opacity-100">
+                                        <div className="flex justify-center items-center w-full h-full">
+                                            <button className="btn-primary w-1/4" onClick={() => getEditToolValues(addedTool.id)}>Edit</button>
+                                            <button className="btn-danger w-1/4" onClick={() => handleDeleteTool(addedTool.id)}>Delete</button>
+                                        </div>            
+                                    </div>
+                                    <div className="grid grid-cols-4 p-4">
+                                        <span className="col-span-1 font-bold italic">{addedTool.tool}</span>
+                                        <div className="col-span-3 m-0 pl-4 italic border-l">
+                                            {addedTool.description} 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        }
+                    </div>                    
+                ))}
+                <div className="grid grid-cols-4 mt-10 gap-3">
+                    <button className="col-start-1 col-span-2 mx-0 btn-primary" onClick={handleInputHomeContentData}>Submit</button>
                     <NavLink className="col-start-3 col-span-2 mx-0 btn-outline-info text-center" to="/dashboard/home">Back</NavLink>
                 </div>
             </div>
-        </div>
     );
 }
 
