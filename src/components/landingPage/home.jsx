@@ -1,22 +1,49 @@
-function Home({name}) {
+/**
+ *  THIS PERSONAL PORTFOLIO WAS DEVELOPED BY: DIANNE RUSSEL P. OCAMPO
+ *  FOR THE PURPOSE OF SHOWCASING HER PROGRAMMING SKILLS AS WELL AS 
+ *  DESINGING USER INTERFACES.
+ *  
+ * SOURCE CODE: https://github.com/abitsurrel/my-portfolio/tree/main
+ *  MIT License
+ *  Copyright (c) 2025 Dianne Russel Ocampo 
+ */
+
+import { useContext } from "react";
+import { DataContext } from "../../DataContext";
+import useResizeWindow from "../../ResizeWindow";
+
+function Home() {
+    
+    const {sharedAboutMeContentData} = useContext(DataContext);
+    const {width} = useResizeWindow();
+    const breakpoint = 768;
+
     return (
         <div>
-            <div className="bg-home"></div>
-            <div className="intro top-16 w-full py-14 md:left-5 md:top-20 md:w-md lg:left-15 lg:top-25 lg:w-xl">
-                <p className="mb-2 lg:mb-5">
-                    Hi <span><img src="/src/assets/hand-waving.gif" className="w-8 inline lg:w-10"/></span><br/>
-                    I am <i className="highlight">{name}</i>! <br/>
-                    Welcome  to my <br/>
-                    <i className="highlight">Personal Portfolio</i>!
-                </p>
-                <button className="btn-outline py-2 px-4 text-base lg:py-3 lg:px-6 lg:text-lg">See My Works</button>
+            <div className="intro w-full h-full">
+                <div className="flex flex-col gap-9 md:gap-3 w-full h-full">
+                    <div className="grid mt-15 gap-10 md:grid-cols-5 md:mt-50">
+                        <div className="md:col-span-2 md:col-start-1 md:ml-20">
+                            <p className="text-center md:text-left mb-5 md:mb-10">
+                                Hi <span><img src="/src/assets/hand-waving.gif" className="w-8 inline lg:w-10"/></span><br/>
+                                I'm <i className="text-orange-400 font-serif text-bold text-shadow-md text-shadow-mint-800 dark:text-shadow-black">{sharedAboutMeContentData.nickname}</i> :) <br/>
+                                Welcome  to my <br/>
+                                <i className="text-orange-400 font-serif text-bold text-shadow-md text-shadow-mint-800 dark:text-shadow-black">Personal Portfolio</i>
+                            </p>                        
+                            <div className="flex justify-center items-center md:justify-start md:items-baseline">
+                                <a className="btn-info py-2 px-3 text-sm md:text-lg rounded-md" href="#my_works">See my works</a>
+                            </div>
+                        </div>
+                        <div className="md:col-span-2 md:col-start-4 md:ml-10 md:mr-10">                            
+                            <div className="flex justify-center items-center mb-5 md:10">
+                                <img src="/src/assets/sprite.jpeg" className="rounded-full w-45 border-2 border-mint-800 md:border-3 md:w-auto lg:w-auto dark:border-transparent" />
+                            </div>                            
+                            <span className="flex justify-center items-center text-sm">This portfolio is hosted in<a className="highlight hover:bg-mint-500 hover:text-white dark:hover:bg-orange-500 px-2" href="https://docs.github.com/en/pages" target="_blank">Github Pages</a></span>     
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div className="intro flex justify-center items-center bottom-30 w-full md:right-5 md:top-20 md:w-md lg:right-15 lg:top-25 lg:w-xl">                
-                <img src="/src/assets/sprite.jpeg" className="rounded-full w-[150px] md:w-[200px] lg:w-auto" />
-            </div>
-            <div className="absolute w-full text-center bottom-5 md:text-lg md:text-right md:right-5">
-                This portfolio is hosted in<a className="highlight hover:text-white">Github Pages</a>
-            </div>
+            {width < breakpoint ? <div className="bg-home-sm"></div> : <div className="bg-home"></div>}            
         </div>        
     );
 }
