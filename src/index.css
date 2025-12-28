@@ -1,58 +1,62 @@
+/**
+ *  THIS PERSONAL PORTFOLIO WAS DEVELOPED BY: DIANNE RUSSEL P. OCAMPO
+ *  FOR THE PURPOSE OF SHOWCASING HER PROGRAMMING SKILLS AS WELL AS 
+ *  DESINGING USER INTERFACES.
+ *  
+ * SOURCE CODE: https://github.com/abitsurrel/my-portfolio/tree/main
+ *  MIT License
+ *  Copyright (c) 2025 Dianne Russel Ocampo 
+ */
+
 @import "tailwindcss";
 @plugin "@tailwindcss/forms";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-mint-50: oklch(0.9713 0.0192 167.94);
+  --color-mint-200: oklch(0.9229 0.0506 167.91);
+  --color-mint-300: oklch(0.8787 0.0824 166.33);
+  --color-mint-400: oklch(0.841 0.1056 165.2);
+  --color-mint-500: oklch(0.743 0.1564 159.57);
+  --color-mint-800: oklch(0.4425 0.0893 160.27);
+  --color-mint-900: oklch(0.3922 0.0766 161.12);
+  --color-mint-950: oklch(0.2353 0.0405 161.58)
+}
+
 @layer base {
   body {
-    @apply bg-slate-900 font-mono
-    text-base
-    text-white
-    leading-normal
-    tracking-normal
+    @apply bg-white text-mint-900 font-mono text-sm leading-normal tracking-normal dark:bg-mint-950 dark:text-white md:text-base
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply mx-0 block font-bold
+    @apply mx-0 font-bold
   }
   h1 {
-    @apply my-1 text-3xl
+    @apply text-3xl md:text-4xl 
   }
   h2 {
-    @apply my-2 text-2xl
+    @apply text-2xl md:text-3xl
   }
   h3 {
-    @apply my-3 text-xl
+    @apply text-xl md:text-2xl
   }
   h4 {
-    @apply my-4 text-base
+    @apply text-lg md:text-xl
   }
   h5 {
-    @apply my-5 text-sm
+    @apply text-base md:text-lg
   }
   h6 {
-    @apply my-6 text-xs
+    @apply text-sm md:text-base
   }
   p {
-    @apply block my-1 p-1
+    @apply block my-1
   }
   a {
-   @apply
-   m-1 py-1 px-3
-   underline
-   decoration-dotted
-   underline-offset-6
-   rounded-md
-   hover:bg-blue-400
-    hover:font-bold
-   cursor-pointer
+   @apply m-1 py-1 underline cursor-pointer hover:bg-mint-800 hover:text-white dark:hover:bg-orange-500
   }
   button {
-    @apply
-    m-1 py-1 px-3
-    rounded-md
-    text-base
-    text-center
-    cursor-pointer
-    hover:font-bold 
-    hover:outline-2 hover:outline-offset-3 hover:outline-white hover:shadow-md  hover:shadow-slate-700
+    @apply m-1 py-1 px-3 rounded-md text-base text-center cursor-pointer border border-transparent hover:font-bold hover:shadow-md hover:outline hover:outline-offset-2 hover:outline-mint-800  hover:border-mint-800 dark:hover:border-white dark:hover:outline-white
   }
 
 }
@@ -61,290 +65,137 @@
 
   /* LOGIN PAGE */
   .login-logo {
-    @apply
-    flex 
-    justify-center 
-    items-center
-    h-[100px]
-    border
-    rounded-xl
-    my-2
-    md:h-full
-    cursor-pointer
+    @apply flex justify-center items-center h-[100px] my-2 cursor-pointer md:h-full
   }
   .login-container {
-    @apply
-    w-full
-    my-2 py-5 px-5
-    rounded-xl
-    md:py-15
-    md:h-full
-    bg-slate-950
+    @apply w-full my-2 p-5 md:py-15 md:h-full
   }
 
   /* END LOGIN PAGE */
 
   /* LANDING PAGE */
   .navbar {
-    @apply
-    flex 
-    justify-between 
-    items-center 
-    w-full
-    h-20
-    fixed
-    z-10
+    @apply flex justify-between items-center w-full h-15 fixed z-10 md:h-22
   }
   .navbar-logo {
-    @apply
-    px-3 py-1
-    rounded-md
-    text-xl
-    md:text-2xl
-    md:px-5
-    md:py-2
-    md:rounded-lg
+    @apply w-30 ml-3 my-1 cursor-pointer md:ml-8 hover:bg-transparent md:w-1/10
   }
   .navbar-link {
-    @apply
-    px-3 py-1
-    no-underline
-    rounded-md
-    text-xs
-    md:text-base
-    md:px-5
-    md:py-2
-    md:rounded-lg
+    @apply px-3 py-1 no-underline rounded-md text-sm md:text-lg md:px-4 md:py-2 md:rounded-lg hover:shadow hover:font-bold hover:bg-mint-800 dark:hover:bg-orange-500 hover:text-white
   }
-  .navbar-link, .navbar-logo {
-    @apply
-    hover:bg-orange-500
-    hover:shadow-md 
-    hover:shadow-slate-700
-    hover:font-bold
-  }
+  
   .core {
-    @apply 
-    grow
-    space-y-8
+    @apply grow space-y-5
   }  
   .bg-home {
-    @apply
-    bg-[url(/src/assets/home-bg.png)]
-    bg-fixed
-    bg-no-repeat
-    bg-cover
-    min-h-screen
-    blur-[3px]
-    bg-center
-    md:bg-top
+    @apply w-full min-h-screen bg-[url(/src/assets/background/light_theme_bg.svg)] bg-cover bg-no-repeat bg-center bg-fixed md:bg-top dark:bg-[url(/src/assets/background/dark_theme_bg.svg)]
+  }
+  .bg-home-sm {
+    @apply w-full min-h-screen bg-[url(/src/assets/background/light_theme_sm_bg.svg)] bg-cover bg-no-repeat bg-center bg-fixed md:bg-top dark:bg-[url(/src/assets/background/dark_theme_sm_bg.svg)]
   }
   .intro {
-    @apply
-    absolute
-    text-center
-    font-serif
-    text-xl
-    leading-relaxed
-    md:text-2xl
-    lg:text-4xl
+    @apply absolute text-xl leading-tight md:text-2xl lg:text-4xl
   }
   /* END LANDING PAGE */
 
   /* DASHBOARD */
+
   .dash-nav {
-    @apply
-    flex 
-    justify-between 
-    items-center 
-    w-full
-    h-20
-    fixed
-    bg-slate-950
+    @apply flex justify-between items-center min-w-screen h-15 shadow-lg bg-white dark:bg-mint-900 md:h-20
   }
   .sidebar {
-    @apply
-    md:w-[230px]
-    lg:w-[250px]
-    h-full
-    m-0
-    bg-slate-950
-    fixed
+    @apply md:w-58 h-full m-0 fixed shadow-[3px_0px_10px_0px_rgba(0,0,0,0.5)] bg-white dark:bg-mint-900
   }
   .dash-logo {
-    @apply
-    text-center
-    rounded-md
-    m-5 px-4 py-2
+    @apply text-center rounded-md m-5 px-4 py-2
   }
   .dash-link {
-    @apply
-    rounded-md
-    mx-5 my-1 px-4 py-2
-    font-normal
-    no-underline
+    @apply rounded-md mx-5 my-1 px-4 py-2 font-normal no-underline
   }
-  .dash-logo, .dash-link {
-    @apply
-    hover:bg-orange-400
-    hover:text-white
-    hover:font-bold
+  .dash-link {
+    @apply hover:text-white hover:font-bold hover:bg-mint-800 dark:hover:bg-orange-400 
   }
   .active {
-    @apply     
-    bg-orange-400
-    font-bold
+    @apply text-white bg-mint-800 dark:bg-orange-400 font-bold
+  }
+
+  .info-border {
+    @apply border rounded-xl shadow-lg shadow-gray-300 dark:shadow-black p-5 text-sm md:text-base
+  }
+
+  .info-empty {
+    @apply italic font-extralight text-gray-800 opacity-80 dark:opacity-50 dark:text-gray-400
   }
 
 /* END DASHBOARD */
+
 /* FORMS */
+
   .input-form {
-    @apply
-    w-full
-    my-2 p-2
-    rounded-md
-    bg-white  
-    text-slate-800
-    focus:outline-2
-    focus:outline-offset-4
-    focus:outline-white
-  }
-  .form-radio {
-    @apply 
-    inline-flex 
-    items-center
-  }
-  .form-radio-label {
-    @apply 
-    ml-2 
-    text-slate-600 
-    cursor-pointer 
-    text-sm
-  }
-  .form-radio-input {
-    @apply
-    appearance-none
-    w-5 h-5
-    cursor-pointer 
-    rounded-full 
-    border-2
-    md:border-4 
-    border-slate-500 
-    checked:border-white
-    checked:bg-orange-500 
-  }
-  .input-group-left {
-    @apply
-    inline-flex
-    gap-0
-    w-full
-  }
-  .input-group-left .input-group-text {
-    @apply
-    my-2 p-2 mx-0
-    rounded-md
-    rounded-r-none
-    bg-slate-300  
-    text-slate-800
-  }
-  .input-group-left .input-form {
-    @apply 
-    mx-0
-    rounded-l-none
+    @apply w-full my-2 p-2 border border-mint-800 rounded-md bg-white text-mint-950 focus:bg-gray-200 focus:ring-0 focus:outline focus:outline-offset-4 focus:outline-mint-800 dark:border-orange-400 dark:focus:outline-orange-400
   }
   .modal {
-    @apply fixed inset-0 flex justify-center items-center z-50
+    @apply fixed inset-0 flex justify-center items-center z-50 overflow-scroll
+  }
+  .modal .input-form {
+    @apply border-orange-500 focus:outline-orange-500 focus:outline-offset-2 dark:border-mint-800 dark:focus:outline-mint-800
   }
   .modal-backdrop {
-    @apply fixed inset-0 bg-white opacity-30
+    @apply fixed inset-0 bg-black opacity-30
   }
   .modal-container {
-    @apply w-full h-auto mx-20 p-5 bg-slate-900 rounded-xl outline-2 outline-offset-4 outline-orange-500 z-20 md:w-[500px] md:mx-auto md:p-10
+    @apply w-full h-auto mt-2 mx-20 p-5 border-2 rounded-xl text-white bg-mint-900 z-20 md:w-[500px] md:mx-auto md:p-10 dark:bg-orange-50 dark:border-orange-400 dark:outline-orange-400 dark:text-mint-950
   }
   .modal-header {
-    @apply flex justify-between items-center
+    @apply flex justify-between gap-3 items-center
   }
   .modal-close {
-    @apply py-1 px-3 rounded-full bg-red-700 cursor-pointer text-white hover:bg-white hover:outline-2 hover:outline-offset-3 hover:outline-red-700 hover:text-red-700 hover:font-bold
+    @apply py-1 px-3 rounded-full bg-red-700 border border-red-700 text-white cursor-pointer hover:bg-white hover:outline hover:outline-offset-2 hover:outline-red-700 hover:text-red-700 hover:font-bold
   }
-
   .add-item {
-    @apply py-1 px-3 border border-transparent rounded-full bg-slate-500 cursor-pointer hover:bg-white hover:outline-2 hover:outline-offset-3 hover:outline-slate-500 hover:text-slate-500 hover:font-bold
+    @apply py-1 px-2.5 text-center text-white border border-transparent rounded-full bg-mint-800  cursor-pointer hover:bg-white hover:border-mint-800 hover:outline hover:outline-offset-2 hover:outline-mint-800 hover:text-mint-950 hover:font-bold dark:bg-orange-400 dark:hover:outline-orange-400 dark:hover:text-orange-400 dark:hover:bg-white dark:hover:border-orange-400
   }
-  .input-modal {
-    @apply
-    w-full
-    my-2 mx-0 p-2 
-    rounded-md
-    bg-white  
-    text-slate-800
-    focus:outline-2
-    focus:outline-orange-500
-    focus:outline-offset-2
-  }
+  
 /* END FORMS */
 
+  .title {
+    @apply mb-4 text-center font-serif text-shadow-lg md:mb-8 md:text-left
+  }
   .error {
-    @apply
-    outline-red-500
-    outline-offset-4
+    @apply outline-red-500 outline-offset-4
   }
   .message {
-    @apply
-    block
-    mb-5 p-2
-    rounded-md
-    outline
-    bg-white
-    text-slate-800
-    text-center
-    text-xs
-    md:text-sm
+    @apply block mb-3 p-2 rounded-md outline bg-white text-mint-950 text-center text-xs md:text-sm
   }
   .btn-primary {
-    @apply
-    no-underline
-    bg-orange-400
-    hover:bg-white
-    hover:text-orange-600
-    hover:outline-orange-500
+    @apply no-underline text-center shadow-none bg-orange-400 text-white border border-transparent hover:bg-white hover:text-orange-400 hover:border-orange-400 hover:outline hover:outline-offset-2 hover:outline-orange-400
   }
   .btn-info {
-    @apply py-1 px-3 no-underline bg-slate-500 text-white  hover:bg-white hover:text-slate-800 hover:outline-slate-500
+    @apply no-underline text-center shadow-none border border-transparent bg-mint-800 text-white hover:bg-white hover:text-mint-800 hover:border-mint-800 hover:outline hover:outline-offset-2 hover:outline-mint-800 dark:bg-white dark:text-mint-950 hover:font-bold dark:hover:bg-mint-800 dark:hover:border-mint-800 dark:hover:text-white dark:hover:outline-mint-800
   }
   .btn-outline-info {
-    @apply py-1 px-3 no-underline bg-transparent outline-2 outline-slate-500 hover:bg-white hover:text-slate-800 hover:outline-slate-500 hover:outline-offset-3
+    @apply no-underline text-center shadow-none bg-white border border-mint-800 dark:border-white  hover:outline hover:outline-offset-2 hover:font-bold hover:bg-mint-800 hover:text-white hover:outline-mint-800 dark:hover:bg-white dark:hover:text-mint-950 dark:hover:outline-white
   }
 
   .btn-danger {
-    @apply py-1 px-3 no-underline bg-red-700 hover:bg-white hover:text-red-700 hover:outline-red-700 hover:outline-offset-3
+    @apply no-underline shadow-none bg-red-700 text-white hover:bg-white hover:text-red-700 hover:outline-red-700 hover:outline-offset-3
+  }
+  .link {
+    @apply my-1 pb-2 rounded-none decoration-2 underline-offset-6 cursor-pointer hover:bg-mint-300 hover:text-orange-500 hover:font-bold hover:italic
+  }
+  
+  .highlight {
+    @apply text-orange-400
   }
 
   /* FOOTER */
   .footer {
-    @apply
-    max-w-full
-    h-30
-    bg-slate-950
-    text-xs
-    p-5
+    @apply flex items-center p-4 text-xs md:m-0 md:p-10
   }
 
   .footer-content {
-    @apply
-    md:grid
-    md:grid-cols-2
-    md:gap-5
-    min-h-full
-    md:mx-10 
-    md:p-5
+    @apply w-full px-4 md:grid md:grid-cols-3 gap-2 md:gap-5
   }
   /* END FOOTER */
 
-  @layer utilities {
-    .highlight {
-      @apply
-      text-orange-400
-    }
-  }
 }
