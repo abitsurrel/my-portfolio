@@ -21,4 +21,5 @@ export default defineConfig({
     }),
     tailwindcss(),    
   ],
+  base:"/my-portfolio"
 })
