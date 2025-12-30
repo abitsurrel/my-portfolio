@@ -252,7 +252,7 @@ function App() {
             <BrowserRouter>      
             <ScrollToTopWrapper>
             <Routes>          
-                <Route path="/" element={<LandingPage />}/>
+                <Route path="/my-portfolio" element={<LandingPage />}/>
                 <Route path="/dashboard" element={<ProtectedRoutes sharedCredential={sharedCredential} />}
                 >
                     <Route index element={<DashboardIndexContent />} />

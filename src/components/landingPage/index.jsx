@@ -188,12 +188,12 @@ function LandingPage() {
 				<div className="navbar bg-transparent dark:bg-transparent transform transition-all duration-300 ease-linear" id="navbar1Id">
 					<div className="navbar-logo">
 						{isDarkTheme ? 						
-							<Link to="/">
-								<img src="/src/assets/logo/dark_theme_logo.svg" alt="My Portfolio" />
+							<Link to="/my-portfolio">
+								<img src="/my-portfolio/src/assets/logo/dark_theme_logo.svg" alt="My Portfolio" />
 							</Link>	
 							:							
-							<Link to="/">
-								<img src="/src/assets/logo/light_theme_logo.svg" alt="My Portfolio" />
+							<Link to="/my-portfolio">
+								<img src="/my-portfolio/src/assets/logo/light_theme_logo.svg" alt="My Portfolio" />
 							</Link>	
 						}			
 					</div>				
@@ -249,12 +249,12 @@ function LandingPage() {
 			<div className={"navbar bg-transparent dark:bg-transparent transform transition-all duration-300 ease-linear" + (width > breakpoint ? "" : " hidden")} id="navbar2Id">
 				<div className="navbar-logo">
 					{isDarkTheme ? 						
-						<Link to="/">
-							<img src="/src/assets/logo/dark_theme_logo.svg" alt="My Portfolio" />
+						<Link to="/my-portfolio">
+							<img src="/my-portfolio/src/assets/logo/dark_theme_logo.svg" alt="My Portfolio" />
 						</Link>	
 						:							
-						<Link to="/">
-							<img src="/src/assets/logo/light_theme_logo.svg" alt="My Portfolio" />
+						<Link to="/my-portfolio">
+							<img src="/my-portfolio/src/assets/logo/light_theme_logo.svg" alt="My Portfolio" />
 						</Link>	
 					}				
 				</div>

@@ -65,7 +65,7 @@ function Dashboard() {
 		},
 		{
 			name: "Landing Page",
-			href: "/"
+			href: "/my-portfolio"
 		}
 	];
 
@@ -80,12 +80,12 @@ function Dashboard() {
                 <div className="flex flex-col min-w-screen">                                    
                     <div className={"dash-nav" + (width < breakpoint ? "" : " hidden")}>
                         {isDarkTheme ? 						
-							<Link className="w-25 hover:bg-transparent" to="/">
-								<img src="/src/assets/logo/dark_theme_logo.svg" alt="My Portfolio" />
+							<Link className="w-25 hover:bg-transparent" to="/my-portfolio">
+								<img src="/my-portfolio/src/assets/logo/dark_theme_logo.svg" alt="My Portfolio" />
 							</Link>	
 							:							
-							<Link className="w-25 hover:bg-transparent" to="/">
-								<img src="/src/assets/logo/light_theme_logo.svg" alt="My Portfolio" />
+							<Link className="w-25 hover:bg-transparent" to="/my-portfolio">
+								<img src="/my-portfolio/src/assets/logo/light_theme_logo.svg" alt="My Portfolio" />
 							</Link>	
 						}
                         <div className="flex gap-1">                            
@@ -116,12 +116,12 @@ function Dashboard() {
                 <div className={"sidebar z-50" + (width > breakpoint ? "" : " hidden")}>
                     <div className="flex justify-center">
                         {isDarkTheme ? 						
-							<Link className="w-40 mx-auto my-5 hover:bg-transparent" to="/">
-								<img src="/src/assets/logo/dark_theme_logo.svg" alt="My Portfolio" />
+							<Link className="w-40 mx-auto my-5 hover:bg-transparent" to="/my-portfolio">
+								<img src="/my-portfolio/src/assets/logo/dark_theme_logo.svg" alt="My Portfolio" />
 							</Link>	
 							:							
-							<Link className="w-40 mx-auto my-5 hover:bg-transparent" to="/">
-								<img src="/src/assets/logo/light_theme_logo.svg" alt="My Portfolio" />
+							<Link className="w-40 mx-auto my-5 hover:bg-transparent" to="/my-portfolio">
+								<img src="/my-portfolio/src/assets/logo/light_theme_logo.svg" alt="My Portfolio" />
 							</Link>	
 						}
                     </div>

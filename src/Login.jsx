@@ -82,7 +82,7 @@ function Login() {
             setHideMessage(true);
             setSharedCredential(true);
             // NAVIGATE BACK TO PREVIOUS ROUTE
-            navigate("/", {replace:true});
+            navigate("/my-portfolio", {replace:true});
         }
         else {           
             setHideMessage(false);
@@ -100,12 +100,12 @@ function Login() {
                 <div className="flex flex-col gap-5 w-5/6 p-8 bg-[rgb(0,0,0,0.05)] rounded-xl md:py-10 md:px-15 md:w-1/2 mx-auto">
                     <div className="flex justify-center items-center w-full">
                         {isDarkTheme ?
-                        <Link className="m-0 p-0 hover:bg-transparent" to="/">
-                            <img src="/src/assets/logo/dark_theme_logo.svg" alt="My Portfolio" className="w-60 mx-auto p-0" />
+                        <Link className="m-0 p-0 hover:bg-transparent" to="/my-portfolio">
+                            <img src="/my-portfolio/src/assets/logo/dark_theme_logo.svg" alt="My Portfolio" className="w-60 mx-auto p-0" />
                         </Link>
                         :
-                        <Link className="m-0 p-0 hover:bg-transparent" to="/">
-                            <img src="/src/assets/logo/light_theme_logo.svg" alt="My Portfolio" className="w-60 mx-auto p-0" />
+                        <Link className="m-0 p-0 hover:bg-transparent" to="/my-portfolio">
+                            <img src="/my-portfolio/src/assets/logo/light_theme_logo.svg" alt="My Portfolio" className="w-60 mx-auto p-0" />
                         </Link>
                         }
                     </div>                    
