@@ -330,7 +330,7 @@ function LandingPage() {
 			{/* END FOOTER */}		 
 			{sharedCredential ? "" :
 				<div className="fixed py-2 px-4 bottom-5 right-5 rounded-full cursor-pointer text-center transition-all duration-300 animate-bounce bg-mint-800 dark:bg-orange-400">
-					<span className="text-white text-sm">Wanna try Dashboard?<Link to="/login">Login now!</Link></span>
+					<span className="text-white text-sm">Wanna try Dashboard?<Link to="/login" className="hover:bg-white  hover:text-mint-800 dark:hover:text-orange-500">Login now!</Link></span>
 				</div>
 			} 
 		</div>

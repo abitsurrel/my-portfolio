@@ -11,7 +11,7 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { DataContext } from './DataContext';
-import useResizeWindow from "./ResizeWindow";
+// import useResizeWindow from "./ResizeWindow";
 
 function Login() {
 
@@ -19,8 +19,8 @@ function Login() {
     const navigate = useNavigate();
     // GET setSharedCredential
     const {setSharedCredential, isDarkTheme, setIsDarkTheme} = useContext(DataContext);
-    const {width} = useResizeWindow();
-    const breakpoint = 768;
+    // const {width} = useResizeWindow();
+    // const breakpoint = 768;
 
     // HANDLE CHANGE THEME TOGGLING
 	const changeTheme = () => {
@@ -139,9 +139,9 @@ function Login() {
                     </div>
                 </div>
             </div>
-            {width < breakpoint ? 
+            {/* {width < breakpoint ? 
                 <div className="bg-home-sm"></div> : <div className="bg-home"></div>
-            }            
+            }             */}
         </div>
     );    
 }
