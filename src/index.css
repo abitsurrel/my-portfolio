@@ -65,7 +65,7 @@
 
   /* LOGIN PAGE */
   .login-logo {
-    @apply flex justify-center items-center h-[100px] my-2 cursor-pointer md:h-full
+    @apply flex justify-center items-center h-25 my-2 cursor-pointer md:h-full
   }
   .login-container {
     @apply w-full my-2 p-5 md:py-15 md:h-full
@@ -88,10 +88,10 @@
     @apply grow space-y-5
   }  
   .bg-home {
-    @apply w-full min-h-screen bg-[url(/src/assets/background/light_theme_bg.svg)] bg-cover bg-no-repeat bg-center bg-fixed md:bg-top dark:bg-[url(/src/assets/background/dark_theme_bg.svg)]
+    @apply w-full min-h-screen bg-[url(/src/assets/images/light_theme_bg.svg)] bg-cover bg-no-repeat bg-center bg-fixed md:bg-top dark:bg-[url(/src/assets/images/dark_theme_bg.svg)]
   }
   .bg-home-sm {
-    @apply w-full min-h-screen bg-[url(/src/assets/background/light_theme_sm_bg.svg)] bg-cover bg-no-repeat bg-center bg-fixed md:bg-top dark:bg-[url(/src/assets/background/dark_theme_sm_bg.svg)]
+    @apply w-full min-h-screen bg-[url(/src/assets/images/light_theme_sm_bg.svg)] bg-cover bg-no-repeat bg-center bg-fixed md:bg-top dark:bg-[url(/src/assets/images/dark_theme_sm_bg.svg)]
   }
   .intro {
     @apply absolute text-xl leading-tight md:text-2xl lg:text-4xl
@@ -144,7 +144,7 @@
     @apply fixed inset-0 bg-black opacity-30
   }
   .modal-container {
-    @apply w-full h-auto mt-2 mx-20 p-5 border-2 rounded-xl text-white bg-mint-900 z-20 md:w-[500px] md:mx-auto md:p-10 dark:bg-orange-50 dark:border-orange-400 dark:outline-orange-400 dark:text-mint-950
+    @apply w-full h-auto mt-2 mx-20 p-5 border-2 rounded-xl text-white bg-mint-900 z-20 md:w-125 md:mx-auto md:p-10 dark:bg-orange-50 dark:border-orange-400 dark:outline-orange-400 dark:text-mint-950
   }
   .modal-header {
     @apply flex justify-between gap-3 items-center

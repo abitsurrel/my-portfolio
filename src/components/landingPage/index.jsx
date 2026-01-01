@@ -189,11 +189,11 @@ function LandingPage() {
 					<div className="navbar-logo">
 						{isDarkTheme ? 						
 							<Link to="/my-portfolio">
-								<img src="/src/assets/logo/dark_theme_logo.svg" alt="My Portfolio" />
+								<img src="/my-portfolio/src/assets/images/dark_theme_logo.svg" alt="My Portfolio" />
 							</Link>	
 							:							
 							<Link to="/my-portfolio">
-								<img src="/src/assets/logo/light_theme_logo.svg" alt="My Portfolio" />
+								<img src="/my-portfolio/src/assets/images/light_theme_logo.svg" alt="My Portfolio" />
 							</Link>	
 						}			
 					</div>				
@@ -250,11 +250,11 @@ function LandingPage() {
 				<div className="navbar-logo">
 					{isDarkTheme ? 						
 						<Link to="/my-portfolio">
-							<img src="/src/assets/logo/dark_theme_logo.svg" alt="My Portfolio" />
+							<img src="/my-portfolio/src/assets/images/dark_theme_logo.svg" alt="My Portfolio" />
 						</Link>	
 						:							
 						<Link to="/my-portfolio">
-							<img src="/src/assets/logo/light_theme_logo.svg" alt="My Portfolio" />
+							<img src="/my-portfolio/src/assets/images/light_theme_logo.svg" alt="My Portfolio" />
 						</Link>	
 					}				
 				</div>
