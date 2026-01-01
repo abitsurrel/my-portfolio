@@ -14,7 +14,7 @@ import useResizeWindow from "../../ResizeWindow";
 
 function Home() {
     
-    const {sharedAboutMeContentData} = useContext(DataContext);
+    const {isDarkTheme, sharedAboutMeContentData} = useContext(DataContext);
     const {width} = useResizeWindow();
     const breakpoint = 768;
 
@@ -31,7 +31,7 @@ function Home() {
                                 <i className="text-orange-400 font-serif text-bold text-shadow-md text-shadow-mint-800 dark:text-shadow-black">Personal Portfolio</i>
                             </p>                        
                             <div className="flex justify-center items-center md:justify-start md:items-baseline">
-                                <a className="btn-info py-2 px-3 text-sm md:text-lg rounded-md" href="#my_works">See my works</a>
+                                <a className={"py-2 px-3 text-sm md:text-lg rounded-md" + (isDarkTheme ? " btn-primary" : " btn-info")} href="#my_works">See my works</a>
                             </div>
                         </div>
                         <div className="md:col-span-2 md:col-start-4 md:ml-10 md:mr-10">                            
