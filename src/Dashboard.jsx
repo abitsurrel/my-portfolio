@@ -81,11 +81,11 @@ function Dashboard() {
                     <div className={"dash-nav" + (width < breakpoint ? "" : " hidden")}>
                         {isDarkTheme ? 						
 							<Link className="w-25 hover:bg-transparent" to="/my-portfolio">
-								<img src="/my-portfolio/src/assets/logo/dark_theme_logo.svg" alt="My Portfolio" />
+								<img src="/src/assets/logo/dark_theme_logo.svg" alt="My Portfolio" />
 							</Link>	
 							:							
 							<Link className="w-25 hover:bg-transparent" to="/my-portfolio">
-								<img src="/my-portfolio/src/assets/logo/light_theme_logo.svg" alt="My Portfolio" />
+								<img src="/src/assets/logo/light_theme_logo.svg" alt="My Portfolio" />
 							</Link>	
 						}
                         <div className="flex gap-1">                            
@@ -117,11 +117,11 @@ function Dashboard() {
                     <div className="flex justify-center">
                         {isDarkTheme ? 						
 							<Link className="w-40 mx-auto my-5 hover:bg-transparent" to="/my-portfolio">
-								<img src="/my-portfolio/src/assets/logo/dark_theme_logo.svg" alt="My Portfolio" />
+								<img src="/src/assets/logo/dark_theme_logo.svg" alt="My Portfolio" />
 							</Link>	
 							:							
 							<Link className="w-40 mx-auto my-5 hover:bg-transparent" to="/my-portfolio">
-								<img src="/my-portfolio/src/assets/logo/light_theme_logo.svg" alt="My Portfolio" />
+								<img src="/src/assets/logo/light_theme_logo.svg" alt="My Portfolio" />
 							</Link>	
 						}
                     </div>
