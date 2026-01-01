@@ -101,11 +101,11 @@ function Login() {
                     <div className="flex justify-center items-center w-full">
                         {isDarkTheme ?
                         <Link className="m-0 p-0 hover:bg-transparent" to="/my-portfolio">
-                            <img src="/src/assets/logo/dark_theme_logo.svg" alt="My Portfolio" className="w-60 mx-auto p-0" />
+                            <img src="/my-portfolio/src/assets/images/dark_theme_logo.svg" alt="My Portfolio" className="w-60 mx-auto p-0" />
                         </Link>
                         :
                         <Link className="m-0 p-0 hover:bg-transparent" to="/my-portfolio">
-                            <img src="/src/assets/logo/light_theme_logo.svg" alt="My Portfolio" className="w-60 mx-auto p-0" />
+                            <img src="/my-portfolio/src/assets/images/light_theme_logo.svg" alt="My Portfolio" className="w-60 mx-auto p-0" />
                         </Link>
                         }
                     </div>                    
