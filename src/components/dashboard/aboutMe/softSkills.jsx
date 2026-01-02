@@ -225,7 +225,6 @@ function SoftSkills({softSkill, setSoftSkill, softSkills, setSoftSkills, softSki
                 <div className="mt-3">
                     {softSkills.map((skill, index) => (
                         <div key={index} className="mb-2 break-all">
-                            {skill === "" ? "" :
                             <div className="flex flex-col border rounded-xl">
                                 <div className="relative block w-full h-full cursor-pointer transition duration-300 ease-in-out hover:scale-95">
                                     <div className="absolute w-full h-full opacity-0 cursor-pointer transition duration-300 ease-in-out rounded-xl hover:opacity-100">
@@ -239,7 +238,6 @@ function SoftSkills({softSkill, setSoftSkill, softSkills, setSoftSkills, softSki
                                     </div>
                                 </div>
                             </div>
-                            }
                         </div>
                     ))}
                 </div>

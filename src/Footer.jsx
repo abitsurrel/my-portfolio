@@ -24,7 +24,7 @@ function Footer({isRounded, from, quicklinks}) {
                         <p className="px-2">Name: <span className="highlight break-word">{sharedAboutMeContentData.name}</span></p>
                         <p className="px-2">Email: <span className="highlight break-all">{sharedAboutMeContentData.email}</span></p>
                         {sharedAboutMeContentData.sites.map((data, index) => (
-                            
+                            data.sitename == "" ? "" :
                             <p key={index} className="px-2">{data.sitename}:<a className="px-2 highlight  hover:bg-mint-300 break-all" target="_blank" href={data.link}>{data.link}</a></p>
                         ))}
                     </div>

@@ -14,7 +14,6 @@ import { DataContext } from "../../DataContext";
 
 function MyWorks() {
 
-
     // GET CALLBACK FUNCTION sharedCredential TO GET CREDENTIAL VALUE
     const {sharedCredential} 	= useContext(DataContext); 
     return (
@@ -23,9 +22,9 @@ function MyWorks() {
             <h1 className="title">My Works</h1>
             <p className="info-empty text-xl">Project is in development phase. </p>
             {sharedCredential ? 
-            <p className="info-empty text-xl">Meanwhile, you can interact with this portfolio using <Link to="/dashboard">Dashboard</Link>.</p>
+            <p className="info-empty text-xl">Meanwhile, you can interact with this portfolio using <Link to="/my-portfolio/dashboard">Dashboard</Link>.</p>
             : 
-            <p className="info-empty text-xl">Meanwhile, you can interact with this portfolio using Dashboard!<Link to="/login">Login</Link> now!</p>}
+            <p className="info-empty text-xl">Meanwhile, you can interact with this portfolio using Dashboard!<Link to="/my-portfolio/login">Login</Link> now!</p>}
             
         </div>
     );

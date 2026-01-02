@@ -218,7 +218,7 @@ function EditAboutMeContent() {
                 soft_skills:        softSkills
             });
 
-            navigate("/dashboard/about-me", {replace: true});
+            navigate("/my-portfolio/dashboard/about-me", {replace: true});
         }
         window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     }
@@ -256,7 +256,7 @@ function EditAboutMeContent() {
             </div>            
             <div className="grid grid-cols-4 gap-3 w-3/5 mx-auto">            
                 <button className="col-span-2 mx-0 btn-primary" onClick={handleSetSharedDeveloperData}>Submit</button>
-                <NavLink to={"/dashboard/about-me"} className="col-span-2 mx-0 btn-info rounded-md text-center">Back</NavLink>
+                <NavLink to={"/my-portfolio/dashboard/about-me"} className="col-span-2 mx-0 btn-info rounded-md text-center">Back</NavLink>
             </div>
         </div>
     );

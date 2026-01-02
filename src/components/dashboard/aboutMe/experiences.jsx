@@ -271,7 +271,7 @@ function WorkExperiences({role, setRole, workPlace, setWorkPlace, startDate, set
     const handleDeleteExpInfo = (id) => {
 
         // FILTER EXP ARRAY TO EXCLUDE SELECTED SITE INFO USING ID
-        const updateExpData = experiences.filter(site => site.id !== id);
+        const updateExpData = experiences.filter(data => data.id !== id);
 
         // UPDATE experiences
         setExperiences(updateExpData);
@@ -315,9 +315,9 @@ function WorkExperiences({role, setRole, workPlace, setWorkPlace, startDate, set
                             <label htmlFor="work_place">Work Place</label>
                             <input type="text" className="input-form mb-2" name="work_place" id="work_place" value={workPlace} onChange={handleWorkPlace} />
                             <label htmlFor="start_date">Start Date</label>
-                            <input type="date" className={"input-form mb-2 outline-2" + (invalidDate ? " error" : "")} name="start_date" id="start_date" value={startDate} onChange={handleStartDate} />
+                            <input type="date" className={"input-form mb-2" + (invalidDate ? " error" : "")} name="start_date" id="start_date" value={startDate} onChange={handleStartDate} />
                             <label htmlFor="end_date">End Date</label>
-                            <input type="date" className={"input-form mb-2 outline-2" + (invalidDate ? " error" : "")} name="end_date" id="end_date" value={endDate} onChange={handleEndDate} />
+                            <input type="date" className={"input-form mb-2" + (invalidDate ? " error" : "")} name="end_date" id="end_date" value={endDate} onChange={handleEndDate} />
                         </div>
                     }/>
                 }                

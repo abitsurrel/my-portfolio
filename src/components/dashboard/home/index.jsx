@@ -89,8 +89,8 @@ function HomeIndex() {
             <h1 className="title">Home Content</h1>
             <div className="w-full md:w-4/5 md:mx-auto">
                 <div className="flex justify-center items-center md:justify-end gap-2 mb-5 mx-0">
-                    <NavLink className={"py-2 px-4 rounded-md text-xs md:text-base" + (isDarkTheme ? " btn-primary" : " btn-info")} to={"/dashboard/home/add-information"}>Add Information</NavLink>
-                    <NavLink className={"py-2 px-4 rounded-md text-xs md:text-base" + (isDarkTheme ? " btn-primary" : " btn-info")} to={"/dashboard/home/edit-information"}>Edit Information</NavLink>
+                    <NavLink className={"py-2 px-4 rounded-md text-xs md:text-base" + (isDarkTheme ? " btn-primary" : " btn-info")} to={"/my-portfolio/dashboard/home/add-information"}>Add Information</NavLink>
+                    <NavLink className={"py-2 px-4 rounded-md text-xs md:text-base" + (isDarkTheme ? " btn-primary" : " btn-info")} to={"/my-portfolio/dashboard/home/edit-information"}>Edit Information</NavLink>
                 </div>
                 <h3 className="title text-center mt-5">About Portfolio</h3>   
                 <p ref={aboutPortfolioRef} id="aboutPortfolioId" className="opacity-0 transform translate-x-1/4 transition-all duration-500 ease-out text-justify break-word dark:shadow-black">

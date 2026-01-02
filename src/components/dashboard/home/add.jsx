@@ -57,7 +57,7 @@ function AddHomeContent() {
                 tools:tools
             });
 
-            navigate("/dashboard/home", {replace: true}); 
+            navigate("/my-portfolio/dashboard/home", {replace: true}); 
         }
         window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     };
@@ -82,7 +82,7 @@ function AddHomeContent() {
 
                 <div className="grid grid-cols-4 mt-10 gap-3">
                     <button className="col-start-1 col-span-2 mx-0 btn-primary" onClick={handleInputHomeContentData}>Submit</button>
-                    <NavLink className="col-start-3 col-span-2 mx-0 btn-info rounded-md text-center" to="/dashboard/home">Back</NavLink>
+                    <NavLink className="col-start-3 col-span-2 mx-0 btn-info rounded-md text-center" to="/my-portfolio/dashboard/home">Back</NavLink>
                 </div>
             </div>
         </div>
