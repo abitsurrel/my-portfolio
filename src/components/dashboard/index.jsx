@@ -155,23 +155,23 @@ function DashboardIndexContent() {
             <h1 className="mb-4 text-center font-serif text-shadow-lg md:mb-8 md:text-left">About Portfolio</h1>    
             <div className="w-full md:w-4/5 md:mx-auto md:mb-10">              
                 {toggleModal && <Modal toggleModal={handleToggleModal} title={modalTitle} button={""} body={modalBody} />}   
-                <div ref={aboutPortfolioRef} id="aboutPortfolioId" className="opacity-0 transform -translate-x-1/4 transition-all duration-700 ease-out text-justify break-word">
+                <div ref={aboutPortfolioRef} id="aboutPortfolioId" className="mb-5 opacity-0 transform -translate-x-1/4 transition-all duration-700 ease-out text-justify break-word">
                     <p>
                         {sharedHomeContentData.aboutPortfolioData}
                     </p>
                 </div>
-                <h3 className="mb-4 text-center font-serif text-shadow-lg md:mb-8 mt-5">Development Tools and Description</h3>   
+                <h3 className="title">Development Tools and Description</h3>   
                 <div ref={toolsAndDescriptionRef} id="toolsAndDescriptionId" className="flex flex-wrap gap-10 justify-center w-full my-5 opacity-0 transform translate-x-1/4 transition-opacity duration-700 ease-linear">   
                     {sharedHomeContentData.tools.map((tool, index) => (
                         <div className="w-full rounded-xl shadow-lg shadow-gray-400 md:w-90 dark:shadow-black" key={index}>
                             <div className="w-full rounded-xl bg-mint-300 md:w-90 dark:bg-white dark:text-mint-800">
-                                <div className="relative w-full h-50 transition duration-200 ease-linear rounded-xl md:h-80 hover:scale-95">    
+                                <div className="relative w-full h-60 transition duration-200 ease-linear rounded-xl md:h-80 hover:scale-95">    
                                     <div className="absolute w-full h-full opacity-0 transition duration-200 ease-linear hover:scale-95 hover:opacity-100">
                                         <div className="flex justify-center items-center w-full h-full">
                                                 <button className="btn-info dark:bg-mint-800 dark:text-white dark:hover:bg-white dark:hover:border-mint-800 dark:hover:outline-mint-800 dark:hover:text-mint-800" onClick={() => {getTool(index)}}>Read more</button>
                                         </div>
                                     </div>
-                                    <div className="h-50 p-5 text-justify break-word md:h-80">
+                                    <div className="h-60 p-5 text-justify break-word md:h-80">
                                         <div className="h-full overflow-hidden">
                                             <p className="italic font-bold">{tool.name}</p>
                                             <p>
@@ -189,7 +189,7 @@ function DashboardIndexContent() {
             {/* ABOUT ME */}
             <h1 className="mb-4 text-center font-serif text-shadow-lg md:mb-8 md:text-left">About Me</h1>    
             <div className="w-full md:w-4/5 md:mx-auto">    
-                <h3 className="mb-4 text-center font-serif text-shadow-lg md:mb-8 mt-5">Personal Information</h3>     
+                <h3 className="title">Personal Information</h3>     
                 <div ref={personalInfoRef} id="personalInfoId" className="info-border opacity-0 -translate-x-1/4 transition-all duration-700 ease-out break-all text-sm md:text-base">        
                     <div className="md:grid md:grid-cols-3 md:pb-1">
                         <p className="italic font-bold md:col-span-1">Name</p>
@@ -226,7 +226,7 @@ function DashboardIndexContent() {
                     } 
                 </div>
                 {/* EDUCATIONAL BACKGROUND */}
-                <h3 className="my-5">Educational Background</h3>
+                <h3 className="title my-5">Educational Background</h3>
                 <div ref={educBackgroundRef} id="educBackgroundId" className="info-border opacity-0 translate-x-1/4 transition-all duration-700 ease-out break-word text-sm md:text-base">  
                     {sharedAboutMeContentData.educ_background[0].school === "" ? "" :
                         sharedAboutMeContentData.educ_background.map((data, index) => (
@@ -248,7 +248,7 @@ function DashboardIndexContent() {
                 </div>                
                 {/* END EDUCATIONAL BACKGROUND */}                 
                 {/* WORK EXPERIENCES */}
-                <h3 className="my-5">Work Experiences</h3>
+                <h3 className="title my-5">Work Experiences</h3>
                 <div ref={experiencesRef} id="experiencesId" className="info-border opacity-0 -translate-x-1/4 transition-all duration-700 ease-out break-word text-sm md:text-base">
                     {sharedAboutMeContentData.experiences[0].role === "" ? 
                         <p className="italic font-extralight text-gray-400 opacity-50">
@@ -273,7 +273,7 @@ function DashboardIndexContent() {
                 </div>
                 {/* END WORK EXPERIENCES */}
                 {/* SKILLS */}
-                <h3 className="mt-5 mb-3">Skills</h3>
+                <h3 className="title mt-5 mb-3">Skills</h3>
                 <span className="block mb-4 italic font-bold pl-5">Technical Skills</span>
                 <div className="info-border">
                     <div ref={progLanguagesRef} id="progLanguagesId" className="opacity-0 translate-x-1/4 transition-all duration-700 ease-out pt-2 md:grid md:grid-cols-3">

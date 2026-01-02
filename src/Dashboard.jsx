@@ -128,7 +128,7 @@ function Dashboard() {
 					</div>  
                 </div>
                 <div className="flex flex-col gap-5 min-h-screen mt-10 mx-5 mb-5 md:mt-0 md:mb-0 md:mx-0 md:col-start-2 md:col-span-4 md:py-4 md:mr-5">
-                    <div className="core p-10 bg-white border-2 rounded-xl dark:bg-mint-900">    
+                    <div className="core p-5 bg-white border-2 rounded-xl md:p-10 dark:bg-mint-900">    
                         <Outlet />
                     </div>
                     {/* FOOTER */}
