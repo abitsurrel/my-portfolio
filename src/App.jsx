@@ -244,7 +244,6 @@ function App() {
         return children;
     };
 
-    
     const [isDarkTheme, setIsDarkTheme] = useState(false);
 
     return (

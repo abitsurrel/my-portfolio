@@ -10,7 +10,6 @@
 
 import { useContext } from "react";
 import { DataContext } from "../../DataContext";
-// import useResizeWindow from "../../ResizeWindow";
 import BackgroundImg from "../../BackgroundImg";
 import hand_waving from "../../assets/images/hand-waving.gif";
 import sprite from "../../assets/images/sprite.jpeg";
@@ -18,9 +17,7 @@ import sprite from "../../assets/images/sprite.jpeg";
 function Home() {
     
     const {isDarkTheme, sharedAboutMeContentData} = useContext(DataContext);
-    // const {width} = useResizeWindow();
-    // const breakpoint = 768;
-
+    
     return (
         <div>
             <div className="intro w-full h-full">
@@ -47,7 +44,6 @@ function Home() {
                 </div>
             </div>
             <BackgroundImg />
-            {/* {width < breakpoint ? <div className="bg-home-sm"></div> : <div className="bg-home"></div>}             */}
         </div>        
     );
 }

@@ -14,7 +14,6 @@ import { DataContext } from "../../DataContext";
 
 function MyWorks() {
 
-
     // GET CALLBACK FUNCTION sharedCredential TO GET CREDENTIAL VALUE
     const {sharedCredential} 	= useContext(DataContext); 
     return (

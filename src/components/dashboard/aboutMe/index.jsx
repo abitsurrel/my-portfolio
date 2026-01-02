@@ -110,33 +110,37 @@ function AboutMeIndex() {
                         <p className="italic font-bold md:col-span-1">Email</p>
                         <p className="pl-5 border-l md:col-span-2">{sharedAboutMeContentData.email}</p>
                     </div> 
-                    {sharedAboutMeContentData.sites[0].sitename === "" ? "" :
-                    <div className="md:grid md:grid-cols-3">  
-                        <p className="md:col-span-1 italic">Sites</p>
-                        <div className="md:col-span-2 pl-5 border-l">
-                            <div className="flex flex-col">  
-                            {sharedAboutMeContentData.sites[0].sitename === "" ? "" :
-                                sharedAboutMeContentData.sites.map((data, index) =>(
-                                    <div key={index}>
-                                        <p className="">
-                                            {data.sitename}
-                                            <br />                                    
-                                            <a href={data.link} target="_blank" className="link mx-0">{data.link}</a>
-                                        </p>
-                                        <hr className="border-t-2 border-dotted my-2" hidden={index === sharedAboutMeContentData.sites.length - 1 ? true : false} />
-                                    </div>
-                                ))
-                            }
-                            </div>  
+                    {sharedAboutMeContentData.sites.length === 0 ? 
+                        <p className="info-empty">
+                            Input Sites
+                        </p>
+                        :
+                        <div className="md:grid md:grid-cols-3">  
+                            <p className="md:col-span-1 italic">Sites</p>
+                            <div className="md:col-span-2 pl-5 border-l">
+                                <div className="flex flex-col">                                 
+                                {
+                                 sharedAboutMeContentData.sites.map((data, index) =>(
+                                        <div key={index}>
+                                            <p>
+                                                {data.sitename}
+                                                <br />                                    
+                                                <a href={data.link} target="_blank" className="link mx-0">{data.link}</a>
+                                            </p>
+                                            <hr className="border-t-2 border-dotted my-2" hidden={index === sharedAboutMeContentData.sites.length - 1 ? true : false} />
+                                        </div>
+                                    ))
+                                }
+                                </div>  
+                            </div>
                         </div>
-                    </div>
                     } 
                 </div>
                 {/* END ABOUT ME */}
                 {/* EDUCATIONAL BACKGROUND */}
                 <h3 className="text-center my-5">Educational Background</h3>
                 <div ref={educBackgroundRef} id="educBackgroundId" className="info-border break-word opacity-0 -translate-x-1/4 transform transition-all duration-700 ease-out">  
-                    {sharedAboutMeContentData.educ_background[0].school === "" ? "" :
+                    {sharedAboutMeContentData.educ_background.length === 0 ? "" :
                         sharedAboutMeContentData.educ_background.map((data, index) => (
                             <div key={index}>
                                 <div className="md:grid md:grid-cols-3">
@@ -158,7 +162,7 @@ function AboutMeIndex() {
                 {/* WORK EXPERIENCES */}
                 <h3 className="text-center my-5">Work Experiences</h3>
                 <div ref={experiencesRef} id="experiencesId" className="info-border break-word opacity-0 translate-x-1/4 transform transition-all duration-700 ease-out">
-                    {sharedAboutMeContentData.experiences[0].role === "" ? 
+                    {sharedAboutMeContentData.experiences.length === 0 ? 
                         <p className="info-empty">
                             Input Work Experiences  
                         </p>
@@ -187,8 +191,8 @@ function AboutMeIndex() {
                     <div ref={progLanguagesRef} id="progLanguagesId" className="pt-2 opacity-0 -translate-x-1/4 transform transition-all duration-700 ease-out md:grid md:grid-cols-3">
                         <p className="italic font-bold md:col-span-1">Programming Languages</p>
                         <div className="md:col-span-2">
-                            {sharedAboutMeContentData.programming_langs[0].language === "" ? 
-                                <p className="info-empty">
+                            {sharedAboutMeContentData.programming_langs.length === 0 ? 
+                                <p className="info-empty ml-5">
                                     Input Programming Languages
                                 </p>
                                 :        
@@ -208,9 +212,9 @@ function AboutMeIndex() {
                     <div ref={toolsRef} id="toolsId" className="opacity-0 translate-x-1/4 transform transition-all duration-700 ease-out md:grid md:grid-cols-3 md:pt-2">
                         <p className="italic font-bold md:col-span-1">Web Development Tools</p>
                         <div className="md:col-span-2">
-                            {sharedAboutMeContentData.tools[0].name === "" ? 
-                                <p className="info-empty">
-                                    Input Programming Languages
+                            {sharedAboutMeContentData.tools.length === 0 ? 
+                                <p className="info-empty ml-5">
+                                    Input Web Development Tools
                                 </p>
                                 :        
                                 sharedAboutMeContentData.tools.map((data, index) => (
@@ -228,14 +232,14 @@ function AboutMeIndex() {
                 </div>
                 <span className="block my-4 italic font-bold">Soft Skills</span>
                 <div ref={softSkillsRef} id="softSkillsId" className="info-border opacity-0 -translate-x-1/4 transform transition-all duration-700 ease-out">
-                    {sharedAboutMeContentData.soft_skills[0] === "" ?  
+                    {sharedAboutMeContentData.soft_skills.length === 0 ?  
                         <p className=" info-empty">
                             Input Soft Skills   
                         </p> 
                         :
                         <ul className="pl-5 list-disc">
                             {sharedAboutMeContentData.soft_skills.map((data, index) => (
-                                <li key={index} className="">{data}</li>
+                                <li key={index}>{data}</li>
                             ))}
                         </ul>
                     }

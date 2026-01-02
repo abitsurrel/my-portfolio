@@ -271,7 +271,7 @@ function WorkExperiences({role, setRole, workPlace, setWorkPlace, startDate, set
     const handleDeleteExpInfo = (id) => {
 
         // FILTER EXP ARRAY TO EXCLUDE SELECTED SITE INFO USING ID
-        const updateExpData = experiences.filter(site => site.id !== id);
+        const updateExpData = experiences.filter(data => data.id !== id);
 
         // UPDATE experiences
         setExperiences(updateExpData);
