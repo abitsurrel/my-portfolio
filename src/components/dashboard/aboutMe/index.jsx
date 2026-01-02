@@ -92,8 +92,8 @@ function AboutMeIndex() {
             <h1 className="title">About Me Content</h1>
              <div className="w-full md:w-4/5 md:mx-auto">
                 <div className="flex justify-center items-center md:justify-end gap-2 mb-5 mx-0">    
-                    <NavLink className={"py-2 px-4 rounded-md text-xs md:text-base" + (isDarkTheme ? " btn-primary" : " btn-info")} to={"/dashboard/about-me/add-information"}>Add Information</NavLink>
-                    <NavLink className={"py-2 px-4 rounded-md text-xs md:text-base" + (isDarkTheme ? " btn-primary" : " btn-info")} to={"/dashboard/about-me/edit-information"}>Edit Information</NavLink>
+                    <NavLink className={"py-2 px-4 rounded-md text-xs md:text-base" + (isDarkTheme ? " btn-primary" : " btn-info")} to={"/my-portfolio/dashboard/about-me/add-information"}>Add Information</NavLink>
+                    <NavLink className={"py-2 px-4 rounded-md text-xs md:text-base" + (isDarkTheme ? " btn-primary" : " btn-info")} to={"/my-portfolio/dashboard/about-me/edit-information"}>Edit Information</NavLink>
                 </div>
                 {/* ABOUT ME */}
                 <h3 className="title">Personal Information</h3>     

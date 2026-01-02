@@ -17,6 +17,7 @@ import AboutPortfolio from './aboutPortfolio';
 import AboutDeveloper from './aboutDeveloper';
 import useResizeWindow from '../../ResizeWindow';
 import MyWorks from './myWorks';
+import Logo from '../../Logo';
 
 function LandingPage() {
 
@@ -167,11 +168,11 @@ function LandingPage() {
 		},
 		{
 			name: "My Works",
-			href: "my_works"
+			href: "#my_works"
 		},
 		{
 			name: "Dashboard",
-			href: "/dashboard"
+			href: "/my-portfolio/dashboard"
 		}
 	];
 
@@ -235,28 +236,22 @@ function LandingPage() {
 					<a className="navbar-link py-3" href="#">My Works</a>   
 					{sharedCredential ? 
 						<>
-							<Link className="navbar-link mb-2 py-3" to="/dashboard">Dashboard</Link> 
+							<Link className="navbar-link mb-2 py-3" to="/my-portfolio/dashboard">Dashboard</Link> 
 							<button className="navbar-link py-3 text-left hover:outline-0 hover:border-transparent" onClick={handleLogout}>Logout</button>
 						</>
 						: 
-						<Link className="navbar-link mb-2 py-3" to="/login">Login</Link>
+						<Link className="navbar-link mb-2 py-3" to="/my-portfolio/login">Login</Link>
 					}		
 				</nav>						
 				{/* END SHOW NAV LINKS FOR SM SCREENS  */}				
 			</div> 
 			{/* END SM SCREENS */}	 
-			{/* MD tto XL SCREENS */}
+			{/* MD to XL SCREENS */}
 			<div className={"navbar bg-transparent dark:bg-transparent transform transition-all duration-300 ease-linear" + (width > breakpoint ? "" : " hidden")} id="navbar2Id">
 				<div className="navbar-logo">
-					{isDarkTheme ? 						
-						<Link to="/my-portfolio">
-							<img src="/my-portfolio/src/assets/images/dark_theme_logo.svg" alt="My Portfolio" />
-						</Link>	
-						:							
-						<Link to="/my-portfolio">
-							<img src="/my-portfolio/src/assets/images/light_theme_logo.svg" alt="My Portfolio" />
-						</Link>	
-					}				
+					<Link to="/my-portfolio">						
+						<Logo />
+					</Link>	
 				</div>
 				<nav className={width > breakpoint ? "flex gap" : "hidden"}>
 					<a className="navbar-link" href="#home">Home</a>
@@ -282,11 +277,11 @@ function LandingPage() {
 					<a className="navbar-link" href="#my_works">My Works</a>   
 					{sharedCredential ? 
 						<>
-							<Link className="navbar-link" to="/dashboard">Dashboard</Link> 
+							<Link className="navbar-link" to="/my-portfolio/dashboard">Dashboard</Link> 
                             <button className="navbar-link hover:outline-0 hover:border-transparent" onClick={handleLogout}>Logout</button>
 						</>
 						: 
-						<Link className="navbar-link" to="/login">Login</Link>
+						<Link className="navbar-link" to="/my-portfolio/login">Login</Link>
 					}					
 					<div className="flex items-center w-auto mr-5 cursor-pointer " onClick={changeTheme}>
 						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-8 transform transition-all duration-300 ease-in-out hover:scale-75 dark:fill-yellow-400">
@@ -330,7 +325,7 @@ function LandingPage() {
 			{/* END FOOTER */}		 
 			{sharedCredential ? "" :
 				<div className="fixed py-2 px-4 bottom-5 right-5 rounded-full cursor-pointer text-center transition-all duration-300 animate-bounce bg-mint-800 dark:bg-orange-400">
-					<span className="text-white text-sm">Wanna try Dashboard?<Link to="/login" className="hover:bg-white  hover:text-mint-800 dark:hover:text-orange-500">Login now!</Link></span>
+					<span className="text-white text-sm">Wanna try Dashboard?<Link to="/my-portfolio/login" className="hover:bg-white  hover:text-mint-800 dark:hover:text-orange-500">Login now!</Link></span>
 				</div>
 			} 
 		</div>

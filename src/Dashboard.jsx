@@ -13,6 +13,7 @@ import useResizeWindow from './ResizeWindow';
 import Footer from './Footer';
 import { useContext, useState } from "react";
 import { DataContext } from "./DataContext";
+import Logo from "./Logo";
 
 function Dashboard() {   
     
@@ -53,15 +54,15 @@ function Dashboard() {
 	const quicklinks = [
 		{
 			name: "Home",
-			href: "/dashboard/home"
+			href: "/my-portfolio/dashboard/home"
 		},
 		{
 			name: "About Me",
-			href: "/dashboard/about-me"
+			href: "/my-portfolio/dashboard/about-me"
 		},
 		{
 			name: "My Works",
-			href: "/dashboard/my-works"
+			href: "/my-portfolio/dashboard/my-works"
 		},
 		{
 			name: "Landing Page",
@@ -78,16 +79,10 @@ function Dashboard() {
         <>          
             <div className="flex flex-col w-full min-h-screen overflow-hidden z-0 md:grid md:grid-cols-5">  
                 <div className="flex flex-col min-w-screen">                                    
-                    <div className={"dash-nav" + (width < breakpoint ? "" : " hidden")}>
-                        {isDarkTheme ? 						
-							<Link className="w-25 hover:bg-transparent" to="/my-portfolio">
-								<img src="/my-portfolio/src/assets/images/dark_theme_logo.svg" alt="My Portfolio" />
-							</Link>	
-							:							
-							<Link className="w-25 hover:bg-transparent" to="/my-portfolio">
-								<img src="/my-portfolio/src/assets/images/light_theme_logo.svg" alt="My Portfolio" />
-							</Link>	
-						}
+                    <div className={"dash-nav" + (width < breakpoint ? "" : " hidden")}>                       					
+                        <Link className="w-25 hover:bg-transparent" to="/my-portfolio">
+                            <Logo />
+                        </Link>	
                         <div className="flex gap-1">                            
                             <div className="flex items-center w-auto cursor-pointer" onClick={changeTheme}>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 transform transition-all duration-300 ease-in-out hover:scale-75 dark:fill-yellow-400">
@@ -103,10 +98,10 @@ function Dashboard() {
                     </div> 
                     {width < breakpoint ? 
                         <nav className={"flex flex-col bg-white shadow-lg transform transition-all duration-700 ease-linear z-20 dark:bg-black dark:shadow-black" + (showNavLinks ? "" : " hidden")}>
-                            <NavLink className="dash-link" to={"/dashboard"} end>Dashboard</NavLink>
-                            <NavLink className="dash-link" to={"/dashboard/home"}>Home</NavLink>
-                            <NavLink className="dash-link" to={"/dashboard/about-me"}>About Me</NavLink>
-                            <NavLink className="dash-link" to={"/dashboard/my-works"}>My Works</NavLink>  
+                            <NavLink className="dash-link" to={"/my-portfolio/dashboard"} end>Dashboard</NavLink>
+                            <NavLink className="dash-link" to={"/my-portfolio/dashboard/home"}>Home</NavLink>
+                            <NavLink className="dash-link" to={"/my-portfolio/dashboard/about-me"}>About Me</NavLink>
+                            <NavLink className="dash-link" to={"/my-portfolio/dashboard/my-works"}>My Works</NavLink>  
                             <button className="dash-link py-1 text-left hover:outline-0 hover:border-transparent" onClick={handleLogout}>Logout</button>
                         </nav>  
                         :
@@ -115,21 +110,15 @@ function Dashboard() {
                 </div> 
                 <div className={"sidebar z-50" + (width > breakpoint ? "" : " hidden")}>
                     <div className="flex justify-center">
-                        {isDarkTheme ? 						
-							<Link className="w-40 mx-auto my-5 hover:bg-transparent" to="/my-portfolio">
-								<img src="/my-portfolio/src/assets/images/dark_theme_logo.svg" alt="My Portfolio" />
-							</Link>	
-							:							
-							<Link className="w-40 mx-auto my-5 hover:bg-transparent" to="/my-portfolio">
-								<img src="/my-portfolio/src/assets/images/light_theme_logo.svg" alt="My Portfolio" />
-							</Link>	
-						}
+                        <Link className="w-40 mx-auto my-5 hover:bg-transparent" to="/my-portfolio">
+                            <Logo />
+                        </Link>	
                     </div>
                     <nav className="flex flex-col">
-                        <NavLink className="dash-link" to={"/dashboard"} end>Dashboard</NavLink>
-                        <NavLink className="dash-link" to={"/dashboard/home"}>Home</NavLink>
-                        <NavLink className="dash-link" to={"/dashboard/about-me"}>About Me</NavLink>
-                        <NavLink className="dash-link" to={"/dashboard/my-works"}>My Works</NavLink>
+                        <NavLink className="dash-link" to={"/my-portfolio/dashboard"} end>Dashboard</NavLink>
+                        <NavLink className="dash-link" to={"/my-portfolio/dashboard/home"}>Home</NavLink>
+                        <NavLink className="dash-link" to={"/my-portfolio/dashboard/about-me"}>About Me</NavLink>
+                        <NavLink className="dash-link" to={"/my-portfolio/dashboard/my-works"}>My Works</NavLink>
                         <button className="dash-link py-2 text-left hover:outline-0 hover:border-transparent" onClick={handleLogout}>Logout</button>
                     </nav>	       
                     <div className="flex justify-end items-baseline w-auto h-full mr-5 cursor-pointer" onClick={changeTheme}>

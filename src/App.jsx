@@ -253,7 +253,7 @@ function App() {
             <ScrollToTopWrapper>
             <Routes>          
                 <Route path="/my-portfolio" element={<LandingPage />}/>
-                <Route path="/dashboard" element={<ProtectedRoutes sharedCredential={sharedCredential} />}
+                <Route path="/my-portfolio/dashboard" element={<ProtectedRoutes sharedCredential={sharedCredential} />}
                 >
                     <Route index element={<DashboardIndexContent />} />
                     <Route path="home/" element={<Home />} >      
@@ -268,7 +268,7 @@ function App() {
                     </Route>
                     <Route path="my-works" element={<MyWorksIndex />} />
                 </Route>
-                <Route path="login" element={<Login />} />
+                <Route path="/my-portfolio/login" element={<Login />} />
             </Routes>
             </ScrollToTopWrapper>
             </BrowserRouter>

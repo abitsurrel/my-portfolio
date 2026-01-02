@@ -11,6 +11,7 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { DataContext } from './DataContext';
+import Logo from "./Logo";
 // import useResizeWindow from "./ResizeWindow";
 
 function Login() {
@@ -92,22 +93,16 @@ function Login() {
     return (
         <div>
             <div className="absolute w-full min-h-screen">	
-                <div className="flex justify-end mx-5 my-2 cursor-pointer" onClick={changeTheme}>
+                <div className="flex justify-end mx-6 my-3 cursor-pointer md:my-5" onClick={changeTheme}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-8 transform transition-all duration-300 ease-in-out hover:scale-75 dark:fill-yellow-400">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
                     </svg>
                 </div>	
                 <div className="flex flex-col gap-5 w-5/6 p-8 bg-[rgb(0,0,0,0.05)] rounded-xl md:py-10 md:px-15 md:w-1/2 mx-auto">
                     <div className="flex justify-center items-center w-full">
-                        {isDarkTheme ?
-                        <Link className="m-0 p-0 hover:bg-transparent" to="/my-portfolio">
-                            <img src="/my-portfolio/src/assets/images/dark_theme_logo.svg" alt="My Portfolio" className="w-60 mx-auto p-0" />
-                        </Link>
-                        :
-                        <Link className="m-0 p-0 hover:bg-transparent" to="/my-portfolio">
-                            <img src="/my-portfolio/src/assets/images/light_theme_logo.svg" alt="My Portfolio" className="w-60 mx-auto p-0" />
-                        </Link>
-                        }
+                        <Link className="w-1/2 m-0 p-0 hover:bg-transparent" to="/my-portfolio">						
+                            <Logo />
+                        </Link>	
                     </div>                    
                     {hideMessage ? "" : 
                         <div className="message error">
@@ -139,9 +134,6 @@ function Login() {
                     </div>
                 </div>
             </div>
-            {/* {width < breakpoint ? 
-                <div className="bg-home-sm"></div> : <div className="bg-home"></div>
-            }             */}
         </div>
     );    
 }

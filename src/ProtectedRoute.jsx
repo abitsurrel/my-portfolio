@@ -16,7 +16,7 @@ function ProtectedRoutes({sharedCredential}) {
     
     if(!sharedCredential) {
         
-        return  <Navigate to="/login" replace />;
+        return  <Navigate to="/my-portfolio/login" replace />;
     }
     return <Dashboard />;
 }
