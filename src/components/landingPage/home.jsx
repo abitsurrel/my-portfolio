@@ -10,13 +10,19 @@
 
 import { useContext } from "react";
 import { DataContext } from "../../DataContext";
-import BackgroundImg from "../../BackgroundImg";
 import hand_waving from "../../assets/images/hand-waving.gif";
 import sprite from "../../assets/images/sprite.jpeg";
+import light_theme_bg from '../../assets/images/light_theme_bg.svg';
+import dark_theme_bg from '../../assets/images/dark_theme_bg.svg';
+import light_theme_sm_bg from '../../assets/images/light_theme_sm_bg.svg';
+import dark_theme_sm_bg from '../../assets/images/dark_theme_sm_bg.svg';
+import useResizeWindow from './../../ResizeWindow';
 
 function Home() {
     
     const {isDarkTheme, sharedAboutMeContentData} = useContext(DataContext);
+    const {width} = useResizeWindow();
+    const breakpoint = 768;
     
     return (
         <div>
@@ -42,8 +48,12 @@ function Home() {
                         </div>
                     </div>
                 </div>
-            </div>
-            <BackgroundImg />
+            </div> 
+            {width > breakpoint ? 
+                <img src={isDarkTheme ? dark_theme_bg : light_theme_bg} className="w-full min-h-screen bg-cover bg-no-repeat bg-center bg-fixed md:bg-top" /> 
+                :  
+                <img src={isDarkTheme ? dark_theme_sm_bg : light_theme_sm_bg} className="w-full min-h-screen bg-cover bg-no-repeat bg-center bg-fixed md:bg-top" /> 
+            }
         </div>        
     );
 }
