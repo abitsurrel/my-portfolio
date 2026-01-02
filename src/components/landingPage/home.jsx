@@ -10,12 +10,12 @@
 
 import { useContext } from "react";
 import { DataContext } from "../../DataContext";
-import hand_waving from "../../assets/images/hand-waving.gif";
-import sprite from "../../assets/images/sprite.jpeg";
-import light_theme_bg from '../../assets/images/light_theme_bg.svg';
-import dark_theme_bg from '../../assets/images/dark_theme_bg.svg';
-import light_theme_sm_bg from '../../assets/images/light_theme_sm_bg.svg';
-import dark_theme_sm_bg from '../../assets/images/dark_theme_sm_bg.svg';
+import hand_waving from "../../assets/images/hand-waving.webp";
+import sprite from "../../assets/images/sprite.webp";
+import light_theme_bg from '../../assets/images/light_theme_bg.webp';
+import dark_theme_bg from '../../assets/images/dark_theme_bg.webp';
+import light_theme_sm_bg from '../../assets/images/light_theme_sm_bg.webp';
+import dark_theme_sm_bg from '../../assets/images/dark_theme_sm_bg.webp';
 import useResizeWindow from './../../ResizeWindow';
 
 function Home() {
@@ -50,7 +50,7 @@ function Home() {
                 </div>
             </div> 
             {width > breakpoint ? 
-                <img src={isDarkTheme ? dark_theme_bg : light_theme_bg} className="w-full min-h-screen bg-cover bg-no-repeat bg-center bg-fixed md:bg-top" /> 
+                <img src={isDarkTheme ? dark_theme_bg : light_theme_bg} className="w-full min-h-screen bg-cover bg-no-repeat bg-center bg-fixed transition-all ease-out md:bg-top" /> 
                 :  
                 <img src={isDarkTheme ? dark_theme_sm_bg : light_theme_sm_bg} className="w-full min-h-screen bg-cover bg-no-repeat bg-center bg-fixed md:bg-top" /> 
             }

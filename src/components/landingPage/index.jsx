@@ -188,15 +188,9 @@ function LandingPage() {
 			<div className={"flex flex-col min-w-screen" + (width > breakpoint ? " hidden" : "")}>
 				<div className="navbar bg-transparent dark:bg-transparent transform transition-all duration-300 ease-linear" id="navbar1Id">
 					<div className="navbar-logo">
-						{isDarkTheme ? 						
-							<Link to="/my-portfolio">
-								<img src="/my-portfolio/src/assets/images/dark_theme_logo.svg" alt="My Portfolio" />
-							</Link>	
-							:							
-							<Link to="/my-portfolio">
-								<img src="/my-portfolio/src/assets/images/light_theme_logo.svg" alt="My Portfolio" />
-							</Link>	
-						}			
+						<Link to="/my-portfolio">						
+							<Logo />
+						</Link>			
 					</div>				
 					<div className="flex gap-1">				
 						<div className="flex items-center w-auto mr-3 cursor-pointer " onClick={changeTheme}>
