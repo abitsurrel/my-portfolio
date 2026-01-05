@@ -80,7 +80,7 @@ function Dashboard() {
             <div className="flex flex-col w-full min-h-screen overflow-hidden z-0 md:grid md:grid-cols-5">  
                 <div className="flex flex-col min-w-screen">                                    
                     <div className={"dash-nav" + (width < breakpoint ? "" : " hidden")}>                       					
-                        <Link className="w-25 hover:bg-transparent" to="/my-portfolio">
+                        <Link className="w-30 ml-3 my-1 hover:bg-transparent" to="/my-portfolio">
                             <Logo />
                         </Link>	
                         <div className="flex gap-1">                            
@@ -97,12 +97,12 @@ function Dashboard() {
                         </div>
                     </div> 
                     {width < breakpoint ? 
-                        <nav className={"flex flex-col bg-white shadow-lg transform transition-all duration-700 ease-linear z-20 dark:bg-black dark:shadow-black" + (showNavLinks ? "" : " hidden")}>
+                        <nav className={"flex flex-col py-3 bg-white shadow-lg transform transition-all duration-700 ease-in z-20 dark:bg-mint-900 dark:shadow-black" + (showNavLinks ? "" : " hidden")}>
                             <NavLink className="dash-link" to={"/my-portfolio/dashboard"} end>Dashboard</NavLink>
                             <NavLink className="dash-link" to={"/my-portfolio/dashboard/home"}>Home</NavLink>
                             <NavLink className="dash-link" to={"/my-portfolio/dashboard/about-me"}>About Me</NavLink>
                             <NavLink className="dash-link" to={"/my-portfolio/dashboard/my-works"}>My Works</NavLink>  
-                            <button className="dash-link py-1 text-left hover:outline-0 hover:border-transparent" onClick={handleLogout}>Logout</button>
+                            <button className="dash-link py-1 text-left text-xs md:text-base hover:outline-0 hover:border-transparent" onClick={handleLogout}>Logout</button>
                         </nav>  
                         :
                         ""

@@ -96,7 +96,7 @@ function AboutMeIndex() {
                     <NavLink className={"py-2 px-4 rounded-md text-xs md:text-base" + (isDarkTheme ? " btn-primary" : " btn-info")} to={"/my-portfolio/dashboard/about-me/edit-information"}>Edit Information</NavLink>
                 </div>
                 {/* ABOUT ME */}
-                <h3 className="title">Personal Information</h3>     
+                <h3 className="title text-center mt-5">Personal Information</h3>     
                 <div ref={personalInfoRef} id="personalInfoId" className="info-border break-all opacity-0 translate-x-1/4 transform transition-all duration-700 ease-out">        
                     <div className="md:grid md:grid-cols-3 md:pb-1">
                         <p className="italic font-bold md:col-span-1">Name</p>
@@ -138,7 +138,7 @@ function AboutMeIndex() {
                 </div>
                 {/* END ABOUT ME */}
                 {/* EDUCATIONAL BACKGROUND */}
-                <h3 className="text-center my-5">Educational Background</h3>
+                <h3 className="title text-center my-5">Educational Background</h3>
                 <div ref={educBackgroundRef} id="educBackgroundId" className="info-border break-word opacity-0 -translate-x-1/4 transform transition-all duration-700 ease-out">  
                     {sharedAboutMeContentData.educ_background.length === 0 ? "" :
                         sharedAboutMeContentData.educ_background.map((data, index) => (
@@ -160,7 +160,7 @@ function AboutMeIndex() {
                 </div>                
                 {/* END EDUCATIONAL BACKGROUND */}                 
                 {/* WORK EXPERIENCES */}
-                <h3 className="text-center my-5">Work Experiences</h3>
+                <h3 className="title text-center my-5">Work Experiences</h3>
                 <div ref={experiencesRef} id="experiencesId" className="info-border break-word opacity-0 translate-x-1/4 transform transition-all duration-700 ease-out">
                     {sharedAboutMeContentData.experiences.length === 0 ? 
                         <p className="info-empty">
@@ -185,7 +185,7 @@ function AboutMeIndex() {
                 </div>
                 {/* END WORK EXPERIENCES */}
                 {/* SKILLS */}
-                <h3 className="text-center my-5">Skills</h3>
+                <h3 className="title text-center my-5">Skills</h3>
                 <span className="block mb-4 italic font-bold">Technical Skills</span>
                 <div className="info-border">
                     <div ref={progLanguagesRef} id="progLanguagesId" className="pt-2 opacity-0 -translate-x-1/4 transform transition-all duration-700 ease-out md:grid md:grid-cols-3">

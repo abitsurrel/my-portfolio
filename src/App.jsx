@@ -119,13 +119,13 @@ function App() {
         [
             {
                 id: 0,
-                name: "Laravel Frameworks",
+                name: "Laravel Framework",
                 mastery: 6,
                 other: ""
             },
             {
                 id: 1,
-                name: "CodeIgniter Frameworks",
+                name: "CodeIgniter Framework",
                 mastery: 4,
                 other: ""
             },
@@ -191,12 +191,6 @@ function App() {
             },
             {
                 id: 11,
-                name: "MySQL",
-                mastery: 4,
-                other: ""
-            },
-            {
-                id: 12,
                 name: "Git",
                 mastery: 6,
                 other: ""
@@ -206,7 +200,7 @@ function App() {
     });
 
     // INITIAL ABOUT PORTFOLIO VALUE
-    const initialAboutPortfolio = "This Portfolio showcases the different projects made by the developer using different web development tools. It is designed to be interactive where visitors can input their information using the Dashboard to make the portfolio feels like their own. \n\nThe logo is a twist of word \"a bit surreal\". The developer change the surreal to \"surrel\", a username used by the developer since college, which also is a play in the developer's name \"Russel\". The circuit lines and nodes, and binary numbers in the background image symbolize the passion of the developer in the field of Information Technology where she aims to establish a successful career. Additionally, the binary numbers represents the developer's name \"dianne russel\" in lower case form to signify the developer's signature and ownership of the portfolio. The binary number and circuit lines arrangements depicts the stage of Taylor Swift's latest concert \"The Eras Tour\". Lastly,  the color palette consisting of white, shades of orange, and shades of mint green is a nod towards Taylor Swift's new album \"The Life of a Showgirl\".";
+    const initialAboutPortfolio = "This Portfolio showcases the different projects made by the developer using different web development tools. It is designed to be interactive where visitors can input their information using the Dashboard to make the portfolio feels like their own. \n\nThe logo is a twist of word \"a bit surreal\". The developer change the surreal to \"surrel\", a username used by the developer since college, which also is a play in the developer's name \"Russel\". The circuit lines and nodes, and binary numbers in the background image symbolize the passion of the developer in the field of Information Technology where she aims to establish a successful career. Additionally, the binary numbers represents the developer's name \"dianne russel\" in lower case form to signify the developer's signature and ownership of the portfolio. The binary number and circuit lines arrangements depicts the stage of Taylor Swift's latest concert \"The Eras Tour\". Lastly,  the color palette consisting of white, shades of orange, and shades of mint green is a nod towards Taylor Swift's new album \"The Life of a Showgirl\".\n\nThe source code of this portfolio can be found at: https://github.com/abitsurrel/my-portfolio";
 
     // HOME CONTENT DATA
     const [sharedHomeContentData, setSharedHomeContentData] = useState({

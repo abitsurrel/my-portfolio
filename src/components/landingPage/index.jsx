@@ -114,13 +114,13 @@ function LandingPage() {
 			// CHECK IF Y-AXIS POSITION IS GREATER THAN THRESHOLD AND SHOWING NAV LINKS
 			if(yPosition > threshold && showNavLinks){
 				// CHANGE BACKGROUND VALUE
-				showNavId.classList.remove("bg-transparent", "dark:bg-transparent");
+				showNavId.classList.remove("bg-[rgb(0,0,0,0.06)]", "dark:bg-[rgb(0,0,0,0.2)]");
 				showNavId.classList.add("bg-[rgb(0,0,0,0.1)]", "dark:bg-[rgb(0,0,0,0.5)]");
 			}
 			else {
 				// CHANGE BACKGROUND VALUE
 				showNavId.classList.remove("bg-[rgb(0,0,0,0.1)]", "dark:bg-[rgb(0,0,0,0.5)]");
-				showNavId.classList.add("bg-transparent", "dark:bg-transparent");
+				showNavId.classList.add("bg-[rgb(0,0,0,0.06)]", "dark:bg-[rgb(0,0,0,0.2)]");
 			}
 		}
 
@@ -206,35 +206,35 @@ function LandingPage() {
 					</div>
 				</div>
 				{/* SHOW NAV LINKS FOR SM SCREENS  */}
-				<nav className={"flex flex-col top-15 fixed w-full bg-transparent dark:bg-transparent shadow-lg transform transition-all duration-700 ease-linear z-20 dark:shadow-black" + (showNavLinks ? "" : " hidden")} id="showNavId">
-					<a className="navbar-link py-3" href="#home">Home</a>
+				<nav className={"flex flex-col top-15 fixed w-full bg-[rgb(0,0,0,0.06)] dark:bg-[rgb(0,0,0,0.2)] shadow-lg transform transition-all duration-700 ease-linear z-20 dark:shadow-black" + (showNavLinks ? "" : " hidden")} id="showNavId">
+					<a className="navbar-link py-2" href="#home">Home</a>
 					<div className="relative inline-block px-1" onClick={handleDropdown}>
-						<div className="flex justify-between w-full py-3 navbar-link cursor-pointer" id="navDropDown">
+						<div className="flex justify-between w-full py-2 navbar-link cursor-pointer" id="navDropDown">
 							<div className="inline-flex items-center" aria-haspopup="true" aria-expanded="true">About	
 							</div>							
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-5 mt-1 ml-3 transition-all duration-100 ease-linear" id="caret1">
 							<path fillRule="evenodd" d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z" clipRule="evenodd" />
 							</svg>
 						</div>
-						<div id="navDropDownContent1" className="absolute top-10 w-90 p-0 bg-white border border-mint-800 rounded-md  transition-all duration-700 ease-in hidden" role="menu" aria-orientation="vertical" aria-labelledby="navDropDown">
+						<div id="navDropDownContent1" className="absolute top-12 w-90 p-0 bg-white border border-mint-800 rounded-md  transition-all duration-700 ease-in hidden" role="menu" aria-orientation="vertical" aria-labelledby="navDropDown">
 							<div className="py-1" role="none">
-								<a href="#about_portfolio" className="block rounded-none m-0 px-4 py-1 no-underline hover:bg-orange-400 dark:text-mint-800" role="menuitem">
+								<a href="#about_portfolio" className="block rounded-none m-0 px-4 py-1 no-underline text-xs md:text-sm hover:bg-orange-400 dark:text-mint-800" role="menuitem">
 									Portfolio
 								</a>
-								<a href="#" className="block rounded-none m-0 px-4 py-1 no-underline hover:bg-orange-400 dark:text-mint-800" role="menuitem">
+								<a href="#about_developer" className="block rounded-none m-0 px-4 py-1 no-underline text-xs md:text-sm hover:bg-orange-400 dark:text-mint-800" role="menuitem">
 									Developer
 								</a>
 							</div>
 						</div>
 					</div>
-					<a className="navbar-link py-3" href="#">My Works</a>   
+					<a className="navbar-link py-2" href="#my_works">My Works</a>   
 					{sharedCredential ? 
 						<>
-							<Link className="navbar-link mb-2 py-3" to="/my-portfolio/dashboard">Dashboard</Link> 
-							<button className="navbar-link py-3 text-left hover:outline-0 hover:border-transparent" onClick={handleLogout}>Logout</button>
+							<Link className="navbar-link mb-2 py-2" to="/my-portfolio/dashboard">Dashboard</Link> 
+							<button className="navbar-link py-2 text-left hover:outline-0 hover:border-transparent" onClick={handleLogout}>Logout</button>
 						</>
 						: 
-						<Link className="navbar-link mb-2 py-3" to="/my-portfolio/login">Login</Link>
+						<Link className="navbar-link mb-2 py-2" to="/my-portfolio/login">Login</Link>
 					}		
 				</nav>						
 				{/* END SHOW NAV LINKS FOR SM SCREENS  */}				
@@ -259,10 +259,10 @@ function LandingPage() {
 						</div>
 						<div id="navDropDownContent2" className="absolute left-5 w-50 p-0 bg-white border border-mint-800 rounded-md  transition-all duration-700 ease-in hidden dark:border-orange-500" role="menu" aria-orientation="vertical" aria-labelledby="navDropDown">
 							<div className="py-1" role="none">
-								<a href="#about_portfolio" className="block rounded-none m-0 px-4 py-1 no-underline text-mint-950 hover:text-white dark:text-orange-500" role="menuitem">
+								<a href="#about_portfolio" className="block rounded-none m-0 px-4 py-1 no-underline text-mint-950 text-xs md:text-sm hover:text-white dark:text-orange-500" role="menuitem">
 									Portfolio
 								</a>
-								<a href="#about_developer" className="block rounded-none m-0 px-4 py-1 no-underline text-mint-950 hover:text-white dark:text-orange-500" role="menuitem">
+								<a href="#about_developer" className="block rounded-none m-0 px-4 py-1 no-underline text-mint-950 text-xs md:text-sm hover:text-white dark:text-orange-500" role="menuitem">
 									Developer
 								</a>
 							</div>

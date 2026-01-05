@@ -88,7 +88,7 @@ function AboutPortfolio() {
     return (
         <div className="p-4 my-2 md:p-10 md:mx-5">
             <h1 className="title">About Portfolio</h1>
-            <p ref={aboutPortfolioRef} id="aboutPortfolioId" className="w-4/5 mx-auto mb-5 opacity-0 transform translate-x-1/4 transition-all duration-500 ease-out text-justify break-word whitespace-pre-wrap">
+            <p ref={aboutPortfolioRef} id="aboutPortfolioId" className="w-4/5 mx-auto mb-5 opacity-0 transform translate-x-1/4 transition-all duration-500 ease-out break-word whitespace-pre-wrap  md:text-justify">
                 {sharedHomeContentData.aboutPortfolioData}
             </p>                
             <h3 className="title text-center mt-5">Development Tools</h3> 
@@ -103,7 +103,7 @@ function AboutPortfolio() {
                                     <button className="btn-info dark:bg-mint-800 dark:text-white dark:hover:bg-white dark:hover:border-mint-800 dark:hover:outline-mint-800 dark:hover:text-mint-800" onClick={() => {getTool(index)}}>Read more</button>
                                 </div>
                             </div>
-                            <div className="h-50 p-5 text-justify break-word md:h-80">
+                            <div className="h-50 p-5 md:text-justify break-word md:h-80">
                                 <div className="h-full overflow-hidden">
                                     <p className="italic font-bold">{data.name}</p>
                                     <p>
