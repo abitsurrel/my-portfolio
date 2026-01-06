@@ -1,7 +1,7 @@
-import light_theme_bg from './assets/images/light_theme_bg.svg';
-import dark_theme_bg from './assets/images/dark_theme_bg.svg';
-import light_theme_sm_bg from './assets/images/light_theme_sm_bg.svg';
-import dark_theme_sm_bg from './assets/images/dark_theme_sm_bg.svg';
+import light_theme_bg from './assets/images/light_theme_bg.webp';
+import dark_theme_bg from './assets/images/dark_theme_bg.webp';
+import light_theme_sm_bg from './assets/images/light_theme_sm_bg.webp';
+import dark_theme_sm_bg from './assets/images/dark_theme_sm_bg.webp';
 import { useContext } from 'react';
 import { DataContext } from './DataContext';
 import useResizeWindow from './ResizeWindow';

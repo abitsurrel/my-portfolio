@@ -191,12 +191,6 @@ function App() {
             },
             {
                 id: 11,
-                name: "MySQL",
-                mastery: 4,
-                other: ""
-            },
-            {
-                id: 12,
                 name: "Git",
                 mastery: 6,
                 other: ""

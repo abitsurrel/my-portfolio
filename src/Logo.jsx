@@ -1,5 +1,5 @@
-import light_theme_logo from './assets/images/light_theme_logo.svg';
-import dark_theme_logo from './assets/images/dark_theme_logo.svg';
+import light_theme_logo from './assets/images/light_theme_logo.webp';
+import dark_theme_logo from './assets/images/dark_theme_logo.webp';
 import { useContext } from 'react';
 import { DataContext } from './DataContext';
 

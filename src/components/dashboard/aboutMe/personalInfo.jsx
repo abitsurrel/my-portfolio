@@ -11,7 +11,7 @@
 import { useState } from "react";   
 import Modal from "../../../Modal";
 
-function PersonalInfo({inputName, setName, nickname, setNickname, email, setEmail, siteName, setSiteName, siteLink, setSiteLink, currentSiteId, setCurrentSiteId, sitesArrayIndex, setSitesArrayIndex, sites, setSites, initialSite}) {    
+function PersonalInfo({inputName, setName, nickname, setNickname, email, setEmail, siteName, setSiteName, siteLink, setSiteLink, currentSiteId, setCurrentSiteId, sitesArrayIndex, setSitesArrayIndex, sites, setSites}) {    
     
     // STATE TO TRACK AND RE-RENDER ERROR MESSAGE VALUE
     const [errorMessage, setErrorMessage] = useState("");
@@ -40,10 +40,15 @@ function PersonalInfo({inputName, setName, nickname, setNickname, email, setEmai
             if(modalTitle === "") {
                 // UPDATE MODAL TITLE
                 setModalTitle("Add Site Information");
-            }
-            if(modalButtonHandler === "") {                
                 // UPDATE MODAL BUTTON HANDLER
                 setModalButtonHandler("handleAddSiteInfo");
+            }
+            else if (modalTitle == "Edit") {
+                
+                // UPDATE MODAL TITLE
+                setModalTitle("Edit Site Information");
+                // UPDATE MODAL BUTTON HANDLER
+                setModalButtonHandler("handleEditSiteInfo");
             }
 
             // UPDATE HIDE MESSAGE STATUS
@@ -59,8 +64,9 @@ function PersonalInfo({inputName, setName, nickname, setNickname, email, setEmai
             // CLOSE MODAL
             setToggleModal(false);
         }
+
     };
-    
+
     // CAPITALIZED FIRST CHAR OF EACH WORD
     const capitalizedValue = (value) => {
 
@@ -222,8 +228,14 @@ function PersonalInfo({inputName, setName, nickname, setNickname, email, setEmai
             // UPDATE ARRAY INDEX
             setSitesArrayIndex(updateSiteData.length);
 
+            // RESET MODAL TITLE
+            setModalTitle("");
+            // RESET MODAL BUTTON HANDLER
+            setModalButtonHandler("");
+
             // CLOSE MODAL
             setToggleModal(false);
+
             // RESET INPUT VALUES
             reset();
         }
@@ -245,7 +257,7 @@ function PersonalInfo({inputName, setName, nickname, setNickname, email, setEmai
             // SET CURRENT SITE ID TO INITIAL STATE
             setCurrentSiteId(0);
             // RESET INPUT VALUES
-            setSites(initialSite);
+            reset();
         }
     };
 

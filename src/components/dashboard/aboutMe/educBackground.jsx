@@ -12,7 +12,7 @@ import { useState } from "react";
 import Modal from "../../../Modal";
 import MonthYear from "../../../MonthYear";
 
-function EducBackground({level, setLevel, school, setSchool, course, setCourse, dateGraduated, setDateGraduated, educBackground, setEducBackground, currentEducId, setCurrentEducId, educArrayIndex, setEducArrayIndex, initialEducation}) {
+function EducBackground({level, setLevel, school, setSchool, course, setCourse, dateGraduated, setDateGraduated, educBackground, setEducBackground, currentEducId, setCurrentEducId, educArrayIndex, setEducArrayIndex}) {
 
     // STATE TO TRACK AND RE-RENDER ERROR MESSAGE VALUE
     const [errorMessage, setErrorMessage] = useState("");
@@ -241,7 +241,7 @@ function EducBackground({level, setLevel, school, setSchool, course, setCourse, 
             // RESET CURRENT ID TO 0
             setCurrentEducId(0);
             // RESET ARRAY VALUES
-            setEducBackground(initialEducation);
+            reset();
         }
     };
     

@@ -114,13 +114,13 @@ function LandingPage() {
 			// CHECK IF Y-AXIS POSITION IS GREATER THAN THRESHOLD AND SHOWING NAV LINKS
 			if(yPosition > threshold && showNavLinks){
 				// CHANGE BACKGROUND VALUE
-				showNavId.classList.remove("bg-transparent", "dark:bg-transparent");
+				showNavId.classList.remove("bg-[rgb(0,0,0,0.06)]", "dark:bg-[rgb(0,0,0,0.2)]");
 				showNavId.classList.add("bg-[rgb(0,0,0,0.1)]", "dark:bg-[rgb(0,0,0,0.5)]");
 			}
 			else {
 				// CHANGE BACKGROUND VALUE
 				showNavId.classList.remove("bg-[rgb(0,0,0,0.1)]", "dark:bg-[rgb(0,0,0,0.5)]");
-				showNavId.classList.add("bg-transparent", "dark:bg-transparent");
+				showNavId.classList.add("[rgb(0,0,0,0.06)]", "dark:bg-[rgb(0,0,0,0.2)]");
 			}
 		}
 
@@ -206,10 +206,10 @@ function LandingPage() {
 					</div>
 				</div>
 				{/* SHOW NAV LINKS FOR SM SCREENS  */}
-				<nav className={"flex flex-col top-15 fixed w-full bg-transparent dark:bg-transparent shadow-lg transform transition-all duration-700 ease-linear z-20 dark:shadow-black" + (showNavLinks ? "" : " hidden")} id="showNavId">
-					<a className="navbar-link py-3" href="#home">Home</a>
+				<nav className={"flex flex-col top-15 fixed w-full bg-[rgb(0,0,0,0.06)] dark:bg-[rgb(0,0,0,0.2)] shadow-lg transform transition-all duration-700 ease-linear z-20 dark:shadow-black" + (showNavLinks ? "" : " hidden")} id="showNavId">
+					<a className="navbar-link py-2" href="#home">Home</a>
 					<div className="relative inline-block px-1" onClick={handleDropdown}>
-						<div className="flex justify-between w-full py-3 navbar-link cursor-pointer" id="navDropDown">
+						<div className="flex justify-between w-full py-2 navbar-link cursor-pointer" id="navDropDown">
 							<div className="inline-flex items-center" aria-haspopup="true" aria-expanded="true">About	
 							</div>							
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-5 mt-1 ml-3 transition-all duration-100 ease-linear" id="caret1">
@@ -227,14 +227,14 @@ function LandingPage() {
 							</div>
 						</div>
 					</div>
-					<a className="navbar-link py-3" href="#">My Works</a>   
+					<a className="navbar-link py-2" href="#">My Works</a>   
 					{sharedCredential ? 
 						<>
-							<Link className="navbar-link mb-2 py-3" to="/my-portfolio/dashboard">Dashboard</Link> 
+							<Link className="navbar-link mb-2 py-2" to="/my-portfolio/dashboard">Dashboard</Link> 
 							<button className="navbar-link py-3 text-left hover:outline-0 hover:border-transparent" onClick={handleLogout}>Logout</button>
 						</>
 						: 
-						<Link className="navbar-link mb-2 py-3" to="/my-portfolio/login">Login</Link>
+						<Link className="navbar-link mb-2 py-2" to="/my-portfolio/login">Login</Link>
 					}		
 				</nav>						
 				{/* END SHOW NAV LINKS FOR SM SCREENS  */}				

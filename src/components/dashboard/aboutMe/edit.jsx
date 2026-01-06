@@ -200,7 +200,7 @@ function EditAboutMeContent() {
 
         if(inputName === "" 
             || email === "" 
-            || educBackground[0].level === ""
+            || educBackground.length === 0
         ) {
             setErrorMessage("Name, email, and Educational Background are required!");
             setHideMessage(false);
@@ -233,21 +233,21 @@ function EditAboutMeContent() {
             </div>
             <div className="w-full mx-auto mt-5 md:w-4/5 mb-10">
             {/* PERSONAL INFORMATION */}
-                <PersonalInfo inputName={inputName} setName={setName} nickname={nickname} setNickname={setNickname} email={email} setEmail={setEmail} siteName={siteName} setSiteName={setSiteName} siteLink={siteLink} setSiteLink={setSiteLink} currentSiteId={currentSiteId} setCurrentSiteId={setCurrentSiteId} sitesArrayIndex={sitesArrayIndex} setSitesArrayIndex={setSitesArrayIndex} sites={sites} setSites={setSites} initialSite={initialSite} />
+                <PersonalInfo inputName={inputName} setName={setName} nickname={nickname} setNickname={setNickname} email={email} setEmail={setEmail} siteName={siteName} setSiteName={setSiteName} siteLink={siteLink} setSiteLink={setSiteLink} currentSiteId={currentSiteId} setCurrentSiteId={setCurrentSiteId} sitesArrayIndex={sitesArrayIndex} setSitesArrayIndex={setSitesArrayIndex} sites={sites} setSites={setSites} />
             {/* END PERSONAL INFORMATION */}
             {/* EDUCATIONAL BACKGROUND */}
-                <EducBackground level={level} setLevel={setLevel} school={school} setSchool={setSchool} course={course} setCourse={setCourse} dateGraduated={dateGraduated} setDateGraduated={setDateGraduated} educBackground={educBackground} setEducBackground={setEducBackground} currentEducId={currentEducId} setCurrentEducId={setCurrentEducId} educArrayIndex={educArrayIndex} setEducArrayIndex={setEducArrayIndex} initialEducation={initialEducation} />
+                <EducBackground level={level} setLevel={setLevel} school={school} setSchool={setSchool} course={course} setCourse={setCourse} dateGraduated={dateGraduated} setDateGraduated={setDateGraduated} educBackground={educBackground} setEducBackground={setEducBackground} currentEducId={currentEducId} setCurrentEducId={setCurrentEducId} educArrayIndex={educArrayIndex} setEducArrayIndex={setEducArrayIndex} />
             {/* END EDUCATIONAL BACKGROUND */}
             {/* EXPERIENCES */}
-                <WorkExperiences role={role} setRole={setRole} workPlace={workPlace} setWorkPlace={setWorkPlace} startDate={startDate} setStartDate={setStartDate} endDate={endDate} setEndDate={setEndDate} experiences={experiences} setExperiences={setExperiences} currentExpId={currentExpId} setCurrentExpId={setCurrentExpId} expArrayIndex={expArrayIndex} setExpArrayIndex={setExpArrayIndex} initialExperience={initialExperience} />
+                <WorkExperiences role={role} setRole={setRole} workPlace={workPlace} setWorkPlace={setWorkPlace} startDate={startDate} setStartDate={setStartDate} endDate={endDate} setEndDate={setEndDate} experiences={experiences} setExperiences={setExperiences} currentExpId={currentExpId} setCurrentExpId={setCurrentExpId} expArrayIndex={expArrayIndex} setExpArrayIndex={setExpArrayIndex} />
             {/* END EXPERIENCES */}
             {/* SKILLS */}
             <h3 className="text-center mt-10">Skills</h3>
                 {/* PROGRAMMING LANGUAGES */}
-                <ProgrammingLanguages language={language} setLanguage={setLanguage} progLanguageMastery={progLanguageMastery} setProgLanguageMastery={setProgLanguageMastery} progLanguageOther={progLanguageOther} setProgLanguageOther={setProgLanguageOther} progLanguages={progLanguages} setProgLanguages={setProgLanguages} currentProgLanguageId={currentProgLanguageId} setCurrentProgLanguageId={setCurrentProgLanguageId} progLanguageArrayIndex={progLanguageArrayIndex} setProgLanguageArrayIndex={setProgLanguageArrayIndex} initialProgLanguage={initialProgLanguage} />
+                <ProgrammingLanguages language={language} setLanguage={setLanguage} progLanguageMastery={progLanguageMastery} setProgLanguageMastery={setProgLanguageMastery} progLanguageOther={progLanguageOther} setProgLanguageOther={setProgLanguageOther} progLanguages={progLanguages} setProgLanguages={setProgLanguages} currentProgLanguageId={currentProgLanguageId} setCurrentProgLanguageId={setCurrentProgLanguageId} progLanguageArrayIndex={progLanguageArrayIndex} setProgLanguageArrayIndex={setProgLanguageArrayIndex} />
                 {/* END PROGRAMMING LANGUAGES */}
                 {/* WEB DEVELOPMENT TOOLS */}
-                <WebDevTools toolName={toolName} setToolName={setToolName} toolMastery={toolMastery} setToolMastery={setToolMastery} toolOther={toolOther} setToolOther={setToolOther} tools={tools} setTools={setTools} currentToolId={currentToolId} setCurrentToolId={setCurrentToolId} toolsArrayIndex={toolsArrayIndex} setToolsArrayIndex={setToolsArrayIndex} initialTool={initialTool} />
+                <WebDevTools toolName={toolName} setToolName={setToolName} toolMastery={toolMastery} setToolMastery={setToolMastery} toolOther={toolOther} setToolOther={setToolOther} tools={tools} setTools={setTools} currentToolId={currentToolId} setCurrentToolId={setCurrentToolId} toolsArrayIndex={toolsArrayIndex} setToolsArrayIndex={setToolsArrayIndex}  />
                 {/* END WEB DEVELOPMENT TOOLS */}
                 {/* SOFT SKILLS */}
                 <SoftSkills softSkill={softSkill} setSoftSkill={setSoftSkill} softSkills={softSkills} setSoftSkills={setSoftSkills} softSkillsArrayIndex={softSkillsArrayIndex} setSoftSkillsArrayIndex={setSoftSkillsArrayIndex} />

@@ -26,7 +26,7 @@
 
 @layer base {
   body {
-    @apply bg-white text-mint-900 font-mono text-sm leading-normal tracking-normal dark:bg-mint-950 dark:text-white md:text-base
+    @apply bg-white text-mint-900 font-mono text-xs leading-normal tracking-normal dark:bg-mint-950 dark:text-white md:text-base
   }
   h1, h2, h3, h4, h5, h6 {
     @apply mx-0 font-bold
@@ -81,7 +81,7 @@
     @apply w-30 ml-3 my-1 cursor-pointer md:ml-8 hover:bg-transparent md:w-1/10
   }
   .navbar-link {
-    @apply px-3 py-1 no-underline rounded-md text-sm md:text-lg md:px-4 md:py-2 md:rounded-lg hover:shadow hover:font-bold hover:bg-mint-800 dark:hover:bg-orange-500 hover:text-white
+    @apply px-3 py-1 no-underline rounded-md text-sm md:text-base md:px-4 md:py-2 md:rounded-lg hover:shadow hover:font-bold hover:bg-mint-800 dark:hover:bg-orange-500 hover:text-white
   }
   
   .core {
@@ -144,7 +144,7 @@
     @apply fixed inset-0 bg-black opacity-30
   }
   .modal-container {
-    @apply w-full h-auto mt-2 mx-20 p-5 border-2 rounded-xl text-white bg-mint-900 z-20 md:w-125 md:mx-auto md:p-10 dark:bg-orange-50 dark:border-orange-400 dark:outline-orange-400 dark:text-mint-950
+    @apply w-full h-auto mt-2 mx-10 p-5 border-2 rounded-xl text-white bg-mint-900 z-20 md:w-125 md:mx-auto md:p-10 dark:bg-orange-50 dark:border-orange-400 dark:outline-orange-400 dark:text-mint-950
   }
   .modal-header {
     @apply flex justify-between gap-3 items-center

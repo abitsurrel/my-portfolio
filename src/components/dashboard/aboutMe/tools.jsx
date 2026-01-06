@@ -12,7 +12,7 @@ import { useState } from "react";
 import Modal from "../../../Modal";
 import Select from "../../../Select";
 
-function WebDevTools({toolName, setToolName, toolMastery, setToolMastery, toolOther, setToolOther, tools, setTools, currentToolId, setCurrentToolId, toolsArrayIndex, setToolsArrayIndex, initialTool}) {
+function WebDevTools({toolName, setToolName, toolMastery, setToolMastery, toolOther, setToolOther, tools, setTools, currentToolId, setCurrentToolId, toolsArrayIndex, setToolsArrayIndex}) {
 
     // STATE TO TRACK AND RE-RENDER ERROR MESSAGE VALUE
     const [errorMessage, setErrorMessage] = useState("");
@@ -358,7 +358,7 @@ function WebDevTools({toolName, setToolName, toolMastery, setToolMastery, toolOt
             // RESET CURRENT ID TO 0
             setCurrentToolId(0);
             // RESET ARRAY VALUES
-            setTools(initialTool);
+            reset();
         }
     };
 

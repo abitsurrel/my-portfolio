@@ -155,7 +155,7 @@ function DashboardIndexContent() {
             <h1 className="mb-4 text-center font-serif text-shadow-lg md:mb-8 md:text-left">About Portfolio</h1>    
             <div className="w-full md:w-4/5 md:mx-auto md:mb-10">              
                 {toggleModal && <Modal toggleModal={handleToggleModal} title={modalTitle} button={""} body={modalBody} />}   
-                <div ref={aboutPortfolioRef} id="aboutPortfolioId" className="opacity-0 transform -translate-x-1/4 transition-all duration-700 ease-out text-justify break-word">
+                <div ref={aboutPortfolioRef} id="aboutPortfolioId" className="opacity-0 transform -translate-x-1/4 transition-all duration-700 ease-out break-word md:text-justify">
                     <p>
                         {sharedHomeContentData.aboutPortfolioData}
                     </p>
@@ -171,7 +171,7 @@ function DashboardIndexContent() {
                                                 <button className="btn-info dark:bg-mint-800 dark:text-white dark:hover:bg-white dark:hover:border-mint-800 dark:hover:outline-mint-800 dark:hover:text-mint-800" onClick={() => {getTool(index)}}>Read more</button>
                                         </div>
                                     </div>
-                                    <div className="h-50 p-5 text-justify break-word md:h-80">
+                                    <div className="h-50 p-5 break-word md:h-80 md:text-justify">
                                         <div className="h-full overflow-hidden">
                                             <p className="italic font-bold">{tool.name}</p>
                                             <p>
