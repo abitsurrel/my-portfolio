@@ -12,7 +12,7 @@ import { useState } from "react";
 import Modal from "../../../Modal";
 import Select from "../../../Select";
 
-function ProgrammingLanguages({language, setLanguage, progLanguageMastery, setProgLanguageMastery, progLanguageOther, setProgLanguageOther, progLanguages, setProgLanguages, currentProgLanguageId, setCurrentProgLanguageId, progLanguageArrayIndex, setProgLanguageArrayIndex, initialProgLanguage}) {
+function ProgrammingLanguages({language, setLanguage, progLanguageMastery, setProgLanguageMastery, progLanguageOther, setProgLanguageOther, progLanguages, setProgLanguages, currentProgLanguageId, setCurrentProgLanguageId, progLanguageArrayIndex, setProgLanguageArrayIndex}) {
     // STATE TO TRACK AND RE-RENDER ERROR MESSAGE VALUE
     const [errorMessage, setErrorMessage] = useState("");
     // STATE TO TRACK AND RE-RENDER HIDE MESSAGE STATUS
@@ -298,13 +298,16 @@ function ProgrammingLanguages({language, setLanguage, progLanguageMastery, setPr
             // RESET CURRENT ID TO 0
             setCurrentProgLanguageId(0);
             // RESET ARRAY VALUES
-            setProgLanguages(initialProgLanguage);
+            reset()
+            setCurrentProgLanguageId(0);
+            setProgLanguageArrayIndex(0);
         }
     };
 
     // RESET INPUT ARRAY VALUES TO ITS INITIAL STATE
     const reset = () => {
         setLanguage("");
+        setProgLanguageOther("")
         setProgLanguageMastery(0);
     };
 

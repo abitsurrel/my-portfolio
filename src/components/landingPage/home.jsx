@@ -10,13 +10,14 @@
 
 import { useContext } from "react";
 import { DataContext } from "../../DataContext";
+import BackgroundImg from "../../BackgroundImg";
 import hand_waving from "../../assets/images/hand-waving.webp";
 import sprite from "../../assets/images/sprite.webp";
 import light_theme_bg from '../../assets/images/light_theme_bg.webp';
 import dark_theme_bg from '../../assets/images/dark_theme_bg.webp';
 import light_theme_sm_bg from '../../assets/images/light_theme_sm_bg.webp';
 import dark_theme_sm_bg from '../../assets/images/dark_theme_sm_bg.webp';
-import useResizeWindow from './../../ResizeWindow';
+import useResizeWindow from "../../ResizeWindow";
 
 function Home() {
     
@@ -28,7 +29,7 @@ function Home() {
         <div>
             <div className="intro w-full h-full">
                 <div className="flex flex-col gap-9 md:gap-3 w-full h-full">
-                    <div className="grid mt-25 gap-10 md:grid-cols-5 md:mt-50">
+                    <div className="grid mt-20 gap-10 md:grid-cols-5 md:mt-50">
                         <div className="md:col-span-2 md:col-start-1 md:ml-20">
                             <p className="text-center md:text-left mb-5 md:mb-10">
                                 Hi <span><img src={hand_waving} className="w-8 inline lg:w-10"/></span><br/>
@@ -44,13 +45,13 @@ function Home() {
                             <div className="flex justify-center items-center mb-5 md:10">
                                 <img src={sprite} className="rounded-full w-45 border-2 border-mint-800 md:border-3 md:w-auto lg:w-auto dark:border-transparent" />
                             </div>                            
-                            <span className="flex justify-center items-center text-sm mt-10 md:mt-5">This portfolio is hosted in<a className="highlight hover:bg-mint-500 hover:text-white dark:hover:bg-orange-500 px-2" href="https://docs.github.com/en/pages" target="_blank">Github Pages</a></span>     
+                            <span className="flex justify-center items-center mt-15 text-sm md:mt-0">This portfolio is hosted in<a className="highlight hover:bg-mint-500 hover:text-white dark:hover:bg-orange-500 px-2" href="https://docs.github.com/en/pages" target="_blank">Github Pages</a></span>     
                         </div>
                     </div>
                 </div>
-            </div> 
+            </div>
             {width > breakpoint ? 
-                <img src={isDarkTheme ? dark_theme_bg : light_theme_bg} className="w-full min-h-screen bg-cover bg-no-repeat bg-center bg-fixed transition-all ease-out md:bg-top" /> 
+                <img src={isDarkTheme ? dark_theme_bg : light_theme_bg} className="w-full min-h-screen bg-cover bg-no-repeat bg-center bg-fixed md:bg-top" /> 
                 :  
                 <img src={isDarkTheme ? dark_theme_sm_bg : light_theme_sm_bg} className="w-full min-h-screen bg-cover bg-no-repeat bg-center bg-fixed md:bg-top" /> 
             }

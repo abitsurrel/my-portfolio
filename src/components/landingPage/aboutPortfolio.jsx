@@ -103,7 +103,7 @@ function AboutPortfolio() {
                                     <button className="btn-info dark:bg-mint-800 dark:text-white dark:hover:bg-white dark:hover:border-mint-800 dark:hover:outline-mint-800 dark:hover:text-mint-800" onClick={() => {getTool(index)}}>Read more</button>
                                 </div>
                             </div>
-                            <div className="h-50 p-5 md:text-justify break-word md:h-80">
+                            <div className="h-50 p-5 break-word md:h-80 md:text-justify">
                                 <div className="h-full overflow-hidden">
                                     <p className="italic font-bold">{data.name}</p>
                                     <p>

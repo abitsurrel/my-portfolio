@@ -119,13 +119,13 @@ function App() {
         [
             {
                 id: 0,
-                name: "Laravel Framework",
+                name: "Laravel Frameworks",
                 mastery: 6,
                 other: ""
             },
             {
                 id: 1,
-                name: "CodeIgniter Framework",
+                name: "CodeIgniter Frameworks",
                 mastery: 4,
                 other: ""
             },

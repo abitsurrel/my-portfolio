@@ -100,31 +100,31 @@ function AboutDeveloper() {
             <h1 className="title">About Developer</h1>
             <div className="grid md:grid-cols-2 gap-5 mb-5">
                 <div ref={personalInfo1Ref} id="personalInfo1Id" className="flex flex-col info-border break-all opacity-0 transform -translate-x-1/4 transition-all duration-500 ease-out">
-                    <div className="grid gap-1 mb-3 md:grid-cols-3 md:gap-2">
+                    <div className="grid gap-2 mb-2 md:grid-cols-3 ">
                         <span className="italic md:col-span-1">Name</span>
-                        <span className="pl-5 border-l font-serif font-bold tracking-widest md:ml-0 md:col-span-2">{sharedAboutMeContentData.name} </span>
+                        <span className="border-l pl-5 font-serif font-bold tracking-widest md:col-span-2">{sharedAboutMeContentData.name} </span>
                     </div>
-                    <div className="grid gap-1 mb-3 md:grid-cols-3 md:gap-2">
+                    <div className="grid gap-2 mb-2 md:grid-cols-3">
                         <span className="italic md:col-span-1">Nickname</span>
-                        <span className="pl-5 border-l font-serif font-bold tracking-widest md:ml-0 md:col-span-2">{sharedAboutMeContentData.nickname} </span>
+                        <span className="border-l pl-5 font-serif font-bold tracking-widest md:col-span-2">{sharedAboutMeContentData.nickname} </span>
                     </div>
-                    <div className="grid gap-1 mb-3 md:grid-cols-3 md:gap-2">
+                    <div className="grid gap-2 md:grid-cols-3">
                         <span className="italic md:col-span-1">Email</span>
-                        <span className="pl-5 border-l font-serif font-bold tracking-widest md:ml-0 md:col-span-2">{sharedAboutMeContentData.email} </span>
+                        <span className="border-l pl-5 font-serif font-bold tracking-widest md:col-span-2">{sharedAboutMeContentData.email} </span>
                     </div>
                 </div>
                 <div ref={personalInfo2Ref} id="personalInfo2Id" className="flex flex-col info-border break-all opacity-0 transform translate-x-1/4 transition-all duration-500 ease-out">
                     <h5 className="mb-2 text-center">Sites</h5>                        
                     {sharedAboutMeContentData.sites.map((data, index) => (                           
-                        <div className="grid gap-1 mb-2 break-all md:grid-cols-3 md:gap-2" key={index}>
+                        <div className="grid gap-2 break-all md:grid-cols-3" key={index}>
                             <span className="italic md:col-span-1">{data.sitename}</span>
-                            <a href={data.link} target="_blank" className="link my-0 pl-5 border-l font-bold tracking-widest md:col-span-2 md:ml-0">{data.link}</a>
+                            <a href={data.link} target="_blank" className="border-l pl-5 link my-0 font-bold tracking-widest md:col-span-2">{data.link}</a>
                         </div>
                     ))}
                 </div>    
             </div>                
             <div className="flex flex-col info-border mb-5">
-                <h3 className="title mb-5 text-center">Educational Background</h3>   
+                <h3 className="mb-5 text-center">Educational Background</h3>   
                 <div ref={educBackgroundRef} id="educBackgroundId" className="flex flex-wrap gap-5 justify-center mb-5 opacity-0 transform -translate-x-1/4 transition-opacity duration-500 ease-linear md:gap-10">        
                     {sharedAboutMeContentData.educ_background.map((data, index) =>(
                         <div className="flex flex-col w-90 p-5 bg-mint-300 info-border border-transparent break-word dark:bg-white dark:text-mint-950" key={index}>
@@ -157,7 +157,7 @@ function AboutDeveloper() {
                 <div ref={progLanguagesRef} id="progLanguagesId" className="flex flex-col gap-3 justify-center mb-10 px-5 opacity-0 transform -translate-x-1/4 transition-all duration-500 ease-out md:gap-5">        
                     {sharedAboutMeContentData.programming_langs.map((data, index) => (  
                         data.language === "" ? "" :
-                        <div className="grid gap-2 mb-1 md:grid-cols-3" key={index}>
+                        <div className="grid gap-1 md:grid-cols-3" key={index}>
                             <div className="md:col-span-1">
                                 <span className="flex items-center break-word">{data.language}</span>
                             </div>
@@ -173,7 +173,7 @@ function AboutDeveloper() {
                 <div ref={toolsRef} id="toolsId" className="flex flex-col gap-3 justify-center mb-10 px-5 opacity-0 transform translate-x-1/4 transition-all duration-500 ease-out md:gap-5">        
                     {sharedAboutMeContentData.tools.map((data, index) => (  
                         data.name === "" ? "" :
-                        <div className="grid gap-2 mb-1 md:grid-cols-3" key={index}>
+                        <div className="grid gap-1 md:grid-cols-3" key={index}>
                             <div className="md:col-span-1">
                                 <span className="flex items-center break-word">{data.name}</span>
                             </div>

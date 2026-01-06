@@ -20,12 +20,11 @@ function MyWorks() {
         
         <div className="p-4 my-2 md:p-10 md:mx-5">
             <h1 className="title">My Works</h1>
-            <p className="info-empty text-base md:text-xl">Project is in development phase. </p>
+            <p className="info-empty text-base md:text-lg">Project is in development phase. </p>
             {sharedCredential ? 
-                <p className="info-empty text-base md:text-xl">Meanwhile, you can interact with this portfolio using <Link to="/my-portfolio/dashboard">Dashboard</Link>.</p>
-                : 
-                <p className="info-empty text-base md:text-xl">Meanwhile, you can interact with this portfolio using Dashboard!<Link to="/my-portfolio/login">Login</Link> now!</p>
-            }
+            <p className="info-empty text-base md:text-lg">Meanwhile, you can interact with this portfolio using <Link to="/my-portfolio/dashboard">Dashboard</Link>.</p>
+            : 
+            <p className="info-empty text-base md:text-lg">Meanwhile, you can interact with this portfolio using Dashboard by <Link to="/my-portfolio/login">Logging in</Link> now!</p>}
             
         </div>
     );

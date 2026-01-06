@@ -12,7 +12,7 @@ import { useState } from "react";
 import Modal from "../../../Modal";
 import MonthDayYear from './../../../MonthDayYear';
 
-function WorkExperiences({role, setRole, workPlace, setWorkPlace, startDate, setStartDate, endDate, setEndDate, experiences, setExperiences, currentExpId, setCurrentExpId, expArrayIndex, setExpArrayIndex, initialExperience}) {
+function WorkExperiences({role, setRole, workPlace, setWorkPlace, startDate, setStartDate, endDate, setEndDate, experiences, setExperiences, currentExpId, setCurrentExpId, expArrayIndex, setExpArrayIndex}) {
     
     // STATE TO TRACK AND RE-RENDER ERROR MESSAGE VALUE
     const [errorMessage, setErrorMessage] = useState("");
@@ -283,7 +283,7 @@ function WorkExperiences({role, setRole, workPlace, setWorkPlace, startDate, set
             // SET CURRENT SITE ID TO INITIAL STATE
             setCurrentExpId(0);
             // RESET ARRAY VALUES
-            setExperiences(initialExperience);
+            reset();
         }
     };
 
