@@ -120,7 +120,7 @@ function Login() {
                                 <span className="text-sm">Note:</span>
                                 <br />  
                                 <div className="ml-5 text-sm">
-                                    Username and password are <strong><i>admin</i></strong>.                    
+                                    Username and password is <strong><i>admin</i></strong>.                    
                                 </div> 
                             </div> 
                             <label htmlFor="username">Username (<span className="text-red-700">*</span>)</label>
